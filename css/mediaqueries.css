@@ -1,0 +1,20 @@
+﻿@media (max-width: 1200px) {
+	.products-list {
+		width: 100%;
+		margin: auto;
+	}
+	.overview div:nth-child(2) {
+	    padding-right: 15px;
+	}
+}
+@media (max-width: 767px) {
+	.webpart-descr {
+		text-align: justify;
+	}
+	.review-img {
+		width: 35px;
+	}
+	.footer-nav li {
+		float: left;
+	}
+}
