@@ -6,6 +6,9 @@
 	.overview div:nth-child(2) {
 	    padding-right: 15px;
 	}
+	.swiper-button-prev, .swiper-button-next {
+		display: block;
+	}
 }
 @media (max-width: 767px) {
 	.webpart-descr {

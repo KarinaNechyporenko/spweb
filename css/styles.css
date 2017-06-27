@@ -281,6 +281,7 @@ header {
 .swiper-button-prev, .swiper-button-next {
 	position: relative;
 	top: -100px;
+	display: none;
 }
 .swiper-button-next {
 	right: -50%;
