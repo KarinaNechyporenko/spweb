@@ -7,6 +7,11 @@ body {
 .fixed {
 	position: fixed;
 }
+.mobile-fixed {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
 .icon {
 	display: inline-block;
 	width: 24px;
@@ -110,7 +115,7 @@ header {
 .banner-text {
 	position: relative;
     top: 10%;
-    max-width: 650px;
+    width: 650px;
 }
 .banner-text h2 {
 	text-align: center;

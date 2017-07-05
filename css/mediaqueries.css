@@ -14,6 +14,14 @@
 	header {
 		background-size: cover;
     	height: 200px;
+    	width: 100%;
+    	position: fixed;
+    	/*top: 0;*/
+    	transition: 400ms ease-out;
+	}
+	.page-content {
+		position: relative;
+		top: 200px;
 	}
 	.navbar>.container .navbar-brand {
 		width: 80%;
@@ -36,8 +44,14 @@
 		height: 75%;
 		overflow: scroll;
 	}
+	.navbar-inverse .navbar-nav>li>a {
+		font-weight: 300;
+	}
 	.banner-text {
-		top: -20%;
+		position: absolute;
+    	left: calc(50% - 325px);
+		top: 30%;
+		transition: 400ms ease-out;
 	}
 	.banner-text h2 {
 		font-size: 20px;
@@ -48,11 +62,19 @@
 	.review-img {
 		width: 35px;
 	}
+	footer {
+		position: relative;
+    	top: 200px;
+	}
 	.footer-nav li {
 		float: left;
 	}
 }
 @media (max-width: 460px) {
+	.banner-text {
+	    width: 300px;
+	    left: calc(50% - 150px);
+	}
 	.product-block div {
 		width: 120px;
 		height: 120px;
@@ -65,4 +87,13 @@
 	    margin-top: 15px;
 	    font-size: 14px;
 	}
+		.footer-nav {
+		width: 277px;
+	}
+	.footer-nav li a {
+		font-size: 13px;
+	}
+}
+@media (max-width: 320px) {
+
 }

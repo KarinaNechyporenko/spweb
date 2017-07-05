@@ -4,11 +4,26 @@
 		//setTimeout(function () {
 			if ($(".header-nav").hasClass("opened-menu")) {
 				$(".navbar-toggle").addClass("fixed");
-				$("body").addClass("fixed");
+				$("body").addClass("mobile-fixed");
+				// $(document).scrollTop(200);
 			} else {
 				$(".navbar-toggle").removeClass("fixed");
-				$("body").removeClass("fixed");
+				$("body").removeClass("mobile-fixed");
 			}	
 		//}, 0);
 	});
+
+	$(window).scroll(function () {
+		if (document.documentElement.clientWidth < 768) {
+	        if ($(document).scrollTop() > 10) {
+	            $("header").css("height", "61px");
+	            $("header").css("z-index", "4");
+	            $(".banner-text").css("display", "none");
+	        } else {
+	            $("header").css("height", "200px");
+	            $("header").css("z-index", "0");
+	            $(".banner-text").css("display", "block");
+	        }
+    	}
+    });
 });
