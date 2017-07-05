@@ -2,6 +2,10 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	background-color: #f3f5f5;
+	width: 100%;
+}
+.fixed {
+	position: fixed;
 }
 .icon {
 	display: inline-block;
@@ -66,6 +70,18 @@ button:hover {
     color:#fff;
     z-index: 2;
 }
+button.navbar-toggle {
+	width: 45px;
+	background: transparent;
+	right: 0;
+}
+button.navbar-toggle:after {
+	content: none;
+}
+.navbar-inverse .navbar-toggle:hover {
+	background: transparent;
+}
+
 nav.navbar {
 	min-height: 80px;
 	background: transparent;
@@ -73,6 +89,9 @@ nav.navbar {
 }
 .navbar>.container .navbar-brand {
 	height: 100%;
+}
+.navbar-brand>img {
+	width: 100%;
 }
 ul.navbar-right {
 	margin-top: 15px;
@@ -291,3 +310,5 @@ header {
 	left: -50%;
 	background-image: url("../img/back.png");
 }
+
+
