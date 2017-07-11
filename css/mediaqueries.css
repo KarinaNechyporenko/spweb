@@ -1,4 +1,7 @@
-﻿@media (max-width: 1200px) {
+﻿@media (max-width: 1210px) {
+	.banner-text h2 {
+		font-size: 43px;
+	}
 	.products-list {
 		width: 100%;
 		margin: auto;
@@ -12,6 +15,33 @@
 	.swiper-button-prev, .swiper-button-next {
 		display: block;
 		z-index: 3;
+	}
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+	.container {
+	    width: 100%;
+	}
+	.navbar-header {
+		width: 30%;
+	}
+	ul.navbar-right {
+		margin-top: 10px;
+	}
+	.navbar-inverse .navbar-nav>li>a {
+		font-size: 18px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.icon {
+	    width: 22px;
+	    height: 22px;
+	    background-size: 100%;
+	    background-repeat: no-repeat;
+	}
+}
+@media (max-width: 970px) {
+	ul.navbar-right {
+	    margin-top: 7px;
 	}
 }
 @media (max-width: 767px) {
@@ -31,6 +61,9 @@
 		position: relative;
 		/*top: 200px;*/
 		top: 260px;
+	}
+	.navbar-header {
+		width: auto;
 	}
 	.navbar>.container .navbar-brand {
 		width: 80%;
