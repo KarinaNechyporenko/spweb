@@ -7,15 +7,15 @@
 		$(".header-nav").toggleClass("opened-menu");
 		//setTimeout(function () {
 			if ($(".header-nav").hasClass("opened-menu")) {
-				$(".navbar-toggle").addClass("fixed");
+				//$(".navbar-toggle").addClass("fixed");
 				$("body").addClass("mobile-fixed");
 				//$("header").css("z-index", "4");
 			} else {
-				$(".navbar-toggle").removeClass("fixed");
+				//$(".navbar-toggle").removeClass("fixed");
 				$("body").removeClass("mobile-fixed");
 				//$("header").css("z-index", "0");
 			}	
-		//}, 0);
+		//}, 200);
 	});
 
 	 $(window).scroll(function () {
