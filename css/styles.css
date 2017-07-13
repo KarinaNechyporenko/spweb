@@ -26,10 +26,7 @@ body {
 
 button {
     width: 200px;
-    height:45px;
-    background:rgba(255,255,255,0);
-    border:2px solid rgb(235, 28, 36);
-    color:#da251d;
+    height: 45px;
     font-size: 16px;
     margin-top: 5px;
 	margin-bottom: 25px;
@@ -42,15 +39,24 @@ button {
     z-index: 1;
 
 }
-
-button:after {
+.btn-red {
+	background: rgba(255,255,255,0);
+    border:2px solid rgb(235, 28, 36);
+    color:#da251d;
+}
+.btn-black {
+	background: rgba(255,255,255,0);
+    border:2px solid #575656;
+    color:#575656;
+}
+.btn-red:after,
+.btn-black:after {
     content:'';
     position:absolute;
     width:0;
     height:100%;
     top:0;
-    left:100px;
-    background:#da251d;
+    left:50%;    
     transform:skewX(-15deg);
     -webkit-transform:skewX(-15deg);
     -moz-transform:skewX(-15deg);
@@ -60,18 +66,24 @@ button:after {
     -webkit-transition:.25s ease-out;
     z-index: -1;
 }
-
-button:hover:after {
+.btn-red:after {
+	background:#da251d;
+}
+.btn-black:after {
+	background:#575656;
+}
+.btn-red:hover:after,
+.btn-black:hover:after {
     transform:skewX(-25deg);
     -webkit-transform:skewX(-25deg);
     -moz-transform:skewX(-25deg);
     -o-transform:skewX(-25deg);
     -ms-transform:skewX(-25deg);
     left:-15px;
-    width:115%;
+    width:125%;
 }
-
-button:hover {
+.btn-red:hover,
+.btn-black:hover {
     color:#fff;
     z-index: 2;
 }
@@ -202,7 +214,8 @@ header {
 
 .product-title,
 .blog-title,
-.author-name span {
+.author-name span,
+.nav-tabs li a {
 	font-size: 17px;
 	color: rgb(51, 51, 51);
 	font-weight: 300;
@@ -224,7 +237,7 @@ header {
 	padding: 15px 0 15px 0;
 	margin-bottom: 35px;
 }
-.overview div:nth-child(2) {
+.overview div:nth-child(odd) {
 	padding-right: 70px;
 }
 .webpart-descr {
@@ -232,7 +245,8 @@ header {
 	color: rgb(51, 51, 51);
 	line-height: 1.5;
 }
-.block-title {
+.block-title,
+.price {
 	width: 100%;
 	font-size: 30px;
 	font-weight: 300;
@@ -245,6 +259,7 @@ header {
 }
 .block-title.webpart-descr {
 	text-align: left;
+	padding-left: 0px;
 }
 .component-title,
 .footer-nav li a {
@@ -343,5 +358,94 @@ footer {
 	left: -49%;
 	background-image: url("../img/back.png");
 }
-
-
+.single-product header {
+	height: 81px;
+	z-index: 4;
+}
+.single-product .page-content,
+.single-product footer {
+	top: 116px;
+}
+.single-product .content-part {
+	padding: 40px;
+}
+.single-product .short-descr {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.short-descr div:first-child {
+	padding: 25px 30px 25px 0px;
+}
+.short-descr .webpart-img {
+	width: 100px;
+}
+.short-descr .block-title.webpart-descr {
+	margin-bottom: 5px;
+}
+.short-descr .category-name {
+	margin-top: 0;
+	font-size: 20px;
+	line-height: 1.2;
+	color: rgb(48, 48, 48);
+	font-weight: 400;
+}
+.short-descr p.webpart-descr {
+	font-size: 14px;
+	line-height: 1.2;
+}
+.short-descr div:nth-child(2) {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.short-descr .read-more {
+	text-align: left;
+}
+.short-descr .read-more:last-child {
+	 font-size: 16px;
+	 margin-top: 20px;
+	 margin-bottom: 0;
+}
+.link {
+	text-decoration: underline;	
+}
+.short-descr button {
+	width: 140px;
+	height: 40px;
+	text-transform: none;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+.short-descr div:last-child {
+	padding: 25px 0px 0px 10px;
+	text-align: center;
+}
+.short-descr div:last-child .read-more {
+	text-align: center;
+	margin-top: 0px;
+}
+.short-descr div:last-child .read-more a {
+	font-size: 14px;
+}
+.price {
+	margin-bottom: 15px;
+	font-weight: 400;
+}
+.single-product .overview {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+.single-product .overview:last-child {
+	padding-bottom: 0;
+}
+.nav-tabs.nav-justified>li>a {
+	border: none;
+	border-bottom: 2px solid rgb(243, 245, 245);
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+	border: none;
+	border-bottom: 5px solid rgb(235, 28, 36);
+	padding-bottom: 8px;
+}
+.single-product .components-list {
+	padding-bottom: 15px;
+}
