@@ -23,6 +23,13 @@ body {
 .icon-shopping-cart {
 	background-image: url("../img/shopping-cart.png");
 }
+.icon-check {
+	background-image: url("../img/check.png");
+	display: inline-block;
+	height: 15px;
+    width: 19px;
+    vertical-align: middle;
+}
 
 button {
     width: 200px;
@@ -237,7 +244,7 @@ header {
 	padding: 15px 0 15px 0;
 	margin-bottom: 35px;
 }
-.overview div:nth-child(odd) {
+.overview div:nth-child(2) {
 	padding-right: 70px;
 }
 .webpart-descr {
@@ -430,7 +437,7 @@ footer {
 	margin-bottom: 15px;
 	font-weight: 400;
 }
-.single-product .overview {
+.tab-content .row {
 	padding-top: 40px;
 	padding-bottom: 30px;
 }
@@ -449,3 +456,32 @@ footer {
 .single-product .components-list {
 	padding-bottom: 15px;
 }
+.single-product .overview div:nth-child(2) {
+    padding-right: 15px;
+}
+.table-part {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.table>thead>tr>th {
+	font-size: 16px;
+  	color: rgb(0, 0, 0);
+  	line-height: 1.5;
+  	text-align: center;
+  	font-weight: 400;
+  	border-bottom: none;
+}
+.table>tbody>tr>td {
+	font-size: 14px;
+    color: rgb(48, 48, 48);
+    line-height: 1.7;
+    text-align: center;
+}
+.table>tbody>tr>td.feature-name {
+	text-align: left;
+}
+
+
+
+
+
