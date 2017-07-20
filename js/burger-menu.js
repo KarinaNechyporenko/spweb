@@ -13,4 +13,7 @@
 			}	
 		//}, 200);
 	});
+	$(".search").click(function () {
+		$(this).closest("li").toggleClass("active");
+	});
 });

@@ -16,9 +16,28 @@ body {
 	display: inline-block;
 	width: 24px;
 	height: 24px;
+	will-change: transform;
+    transition: .22s;
 }
 .icon-big-loupe {
 	background-image: url("../img/big-loupe.png");
+}
+.search .icon-big-loupe {
+	transform: scale(1) rotate(0deg);
+}
+.active .search .icon-big-loupe {
+	transform: scale(0) rotate(90deg);
+}
+.icon-close {
+	background-image: url("../img/close.png");
+}
+.search .icon-close {
+	transform: scale(0) rotate(-90deg);
+	position: absolute;
+    left: 10px;
+}
+.active .search .icon-close {	
+	transform: scale(1) rotate(0deg);
 }
 .icon-shopping-cart {
 	background-image: url("../img/shopping-cart.png");
@@ -135,6 +154,55 @@ ul.navbar-right {
 	vertical-align: top;
 	font-weight: 300;
 }
+.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.active>a:focus, 
+.navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: transparent;
+}
+/***** SEARCH FORM *****/
+.search-form {
+    position: absolute;
+    z-index: 10;
+    right: -5px;
+    top: 80%;
+    width: 450px;
+    transition: .33s;
+    opacity: 0;
+    visibility: hidden;
+}
+.active .search-form {
+	top: 100%;
+	opacity: 1;
+    visibility: visible;
+}
+.form-input {
+	display: block;
+    width: 100%;
+    height: 50px;
+    padding: 12px 55px 12px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #898989;
+    background-color: #fff;
+    -webkit-appearance: none;
+    transition: .3s ease-in-out;
+    border: 1px solid #d9d9d9;
+}
+.form-input:focus {
+	outline: 0;
+}
+.btn-search {
+	width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    border: 1px solid #d9d9d9;
+    padding: 12px;
+}
+
 header {
 	background-image: url("../img/banner.png");
 	min-height: 81px;
