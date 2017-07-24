@@ -529,17 +529,17 @@ footer {
 }
 .nav-tabs.nav-justified>li>a {
 	border: none;
-	border-bottom: 2px solid rgb(243, 245, 245);
+	/*border-bottom: 2px solid rgb(243, 245, 245);*/
 	border-radius: 0;
 	padding-bottom: 8px;
 }
-/*.nav-tabs.nav-justified>li>a:hover {
-	background-color: #fff;
-	border-bottom: 5px solid rgb(235, 28, 36);
-}*/
+.nav-tabs.nav-justified>li>a:hover {
+	background-color: transparent;
+	/*border-bottom: 5px solid rgb(235, 28, 36);*/
+}
 .nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
 	border: none;
-	border-bottom: 5px solid rgb(235, 28, 36);	
+	/*border-bottom: 5px solid rgb(235, 28, 36);	*/
 }
 .single-product .components-list {
 	padding-bottom: 15px;
@@ -659,3 +659,32 @@ footer {
 .tab-content .docs-part .doc-title {
 	margin-top: 0;
 }
+
+.slider{
+  width: 100%;
+  height: 5px;
+  display: block;
+  background: #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.slider .bar{
+  width: 16.7%;
+  height: 5px;
+  background: rgb(235, 28, 36);
+  /*border-radius: 5px;*/
+}
+
+/*Animations*/
+.slider .bar {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+}
+#slide-item-1.active ~ .slider .bar{ margin-left: 0; }
+#slide-item-2.active ~ .slider .bar{ margin-left: 16.7%; }
+#slide-item-3.active ~ .slider .bar{ margin-left: 36%; }
+#slide-item-4.active ~ .slider .bar{ margin-left: 54%; }
+#slide-item-5.active ~ .slider .bar{ margin-left: 69%; }
+#slide-item-6.active ~ .slider .bar{ margin-left: 83.3%; }
