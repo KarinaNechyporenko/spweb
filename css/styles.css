@@ -171,14 +171,14 @@ ul.navbar-right {
     position: absolute;
     z-index: 10;
     right: 0px;
-    top: 80%;
+    top: 85%;
     width: 450px;
     transition: .33s;
     opacity: 0;
     visibility: hidden;
 }
 .active .search-form {
-	top: 100%;
+	top: 66px;
 	opacity: 1;
     visibility: visible;
 }
