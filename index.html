@@ -35,7 +35,17 @@
 				    	<li><a href="#">Forum</a></li>
 				    	<li><a href="#">Blog</a></li>
 				    	<li><a href="#">Support</a></li>
-				      	<li><a href="#"><span class="icon icon-big-loupe"></span><span class="icon-label">Search</span></a></li>
+				      	<li class="">
+					      		<a class="search"><span class="icon icon-big-loupe"></span><span class="icon icon-close"></span><span class="icon-label">Search</span></a>
+					      		<form class="search-form" action="" data-search-live="" method="GET">
+			                        <div class="form-wrap">
+			                            <input class="form-input" id="search-form-input" type="text" name="s" autocomplete="off" placeholder="Search">
+			                            <!-- <label class="form-label rd-input-label" for="rd-navbar-search-form-input">Search</label> -->
+			                        </div>
+			                        <button class="btn-search" type="submit"><span class="icon icon-big-loupe"></span></button>
+			                        <!-- <div class="rd-search-results-live cleared" id="rd-search-results-live"></div> -->
+		                      </form>
+					      	</li>
 				      	<li><a href="#"><span class="icon icon-shopping-cart"></span><span class="icon-label">Basket</span></a></li>
 				    </ul>
 			    </div>
