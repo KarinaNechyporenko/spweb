@@ -9,6 +9,8 @@
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <!-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>   
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"> -->
 	    <script src="js/swiper.min.js"></script>
 	    <script src="js/burger-menu.js"></script>
 	    <script src="js/main.js"></script>
@@ -235,6 +237,7 @@
 			</div>
 		</footer>
 
+
 		<script>
          var swiper = new Swiper('.components-list .swiper-container', {
              nextButton: '.components-list .swiper-button-next',
@@ -271,6 +274,16 @@
                 }
              }
          });
+        </script>
+        <script>
+        (function($){
+		$(window).on('load', function(){
+			$("body").mCustomScrollbar({
+				theme:"dark-thin"
+			});
+			// $("")
+		});
+	})(jQuery);
         </script>
 	</body>
 </html>

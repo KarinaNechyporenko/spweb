@@ -1,4 +1,9 @@
 ﻿$( document ).ready(function() {
+	/**** Smooth Scroll Start ****/
+	
+	/**** Smooth Scroll End ****/
+
+	/**** Burger Menu Start ****/
 	$(".navbar-toggle").click(function () {
 		$(".header-nav").toggleClass("opened-menu");
 		//setTimeout(function () {
@@ -13,7 +18,11 @@
 			}	
 		//}, 200);
 	});
+	/**** Burger Menu End ****/
+
+	/**** Search on Page Start ****/
 	$(".search").click(function () {
 		$(this).closest("li").toggleClass("active");
 	});
+	/**** Search on Page End ****/
 });
