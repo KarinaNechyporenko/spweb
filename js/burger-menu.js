@@ -1,6 +1,13 @@
 ﻿$( document ).ready(function() {
 	/**** Smooth Scroll Start ****/
-	
+	$(window).on('load', function(){
+        $("body").mCustomScrollbar({
+            updateOnContentResize:true,
+            theme:"dark-thin",
+            mouseWheelPixels:600
+
+        });
+    });
 	/**** Smooth Scroll End ****/
 
 	/**** Burger Menu Start ****/
