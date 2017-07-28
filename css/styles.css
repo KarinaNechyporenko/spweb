@@ -221,6 +221,7 @@ header {
 	height: 499px;
 	max-height: 499px;
 	position: fixed;
+	top: 0;
 	width: 100%;
     transition: 400ms ease-out;
 }
@@ -244,6 +245,10 @@ header {
 	position: relative;
     top: 499px;
 }
+body.home .page-content {
+	min-height: 2250px;
+}
+
 /*.products-list,*/
 .components-list,
 .blog-list {
@@ -420,6 +425,9 @@ footer {
 	position: relative;
 	top: 250px;
 	height: 250px;
+}
+body.home footer {
+	top: 130px;
 }
 .footer-nav {
 	margin: auto;
