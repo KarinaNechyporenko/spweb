@@ -791,3 +791,28 @@ body:not(.home) .content-part.tab-part {
 .product-item:nth-child(2) {
 	float: right;
 }
+select.form-control {
+	height: 40px;
+}
+select.form-control:focus {
+	outline: none;
+	border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+select.form-control option {
+	height: 40px !important;
+	border: 1px solid #ccc !important;
+	outline: none !important;
+}
+select.form-control option:hover {
+	background: #ccc !important;
+}
+#tab_selector * {
+	height: 40px !important;
+	border: 1px solid #ccc !important;
+	outline: none !important;
+}
+.mCSB_inside > .mCSB_container {
+    margin-right: 0px !important;
+}

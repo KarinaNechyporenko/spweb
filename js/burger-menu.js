@@ -32,4 +32,9 @@
 		$(this).closest("li").toggleClass("active");
 	});
 	/**** Search on Page End ****/
+
+
+	$('#tab_selector').on('change', function (e) {
+	    $('.nav-tabs li a').eq($(this).val()).tab('show');
+	});
 });
