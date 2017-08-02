@@ -56,7 +56,7 @@
         $("body").mCustomScrollbar({
             updateOnContentResize:true,
             theme:"dark-thin",
-            mouseWheelPixels:600,
+            mouseWheelPixels:500,
             scrollInertia:600,
             callbacks:{
                 onScrollStart:function(){

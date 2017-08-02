@@ -80,6 +80,16 @@
 		max-width: 100%;
 		padding-right: 15px;
 	}
+	.single-product .short-descr div:first-child {
+	    max-width: 100%;
+	}
+	.single-product .short-descr div:last-child {
+		margin-top: 30px;
+    	margin-right: 0;
+	}
+	.single-product .short-descr div:last-child .read-more {
+	    margin-top: 10px;
+	}
 	
 
 }
@@ -113,6 +123,7 @@
 	}
 	.navbar-header {
 		width: auto;
+		margin-top: 10px;
 	}
 	.navbar>.container .navbar-brand {
 		width: 80%;
@@ -234,6 +245,14 @@
 	.single-product .short-descr div:last-child {
 	    padding: 0px 0px 0px 0px;
 	    text-align: center;
+	}
+	.radio-area {
+	    width: 100%;
+    	text-align: left;
+    	max-width: 193px;
+	}
+	.radio-inline+.radio-inline {
+		margin-left: 0;
 	}
 }
 @media (max-width: 767px) and (max-height: 413px) {

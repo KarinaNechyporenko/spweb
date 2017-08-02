@@ -424,10 +424,10 @@ body.home .page-content {
 footer {
 	position: relative;
 	top: 250px;
-	height: 250px;
+	height: 210px;
 }
 body.home footer {
-	top: 130px;
+	top: 115px;
 }
 .footer-nav {
 	margin: auto;
@@ -532,6 +532,8 @@ body:not(.home) .content-part.tab-part {
 .short-descr div:last-child {
 	padding: 0px 0px 0px 10px;
 	text-align: center;
+	float: right;
+    margin-right: -15px;
 }
 .short-descr div:last-child .read-more {
 	text-align: center;
@@ -815,4 +817,7 @@ select.form-control option:hover {
 }
 .mCSB_inside > .mCSB_container {
     margin-right: 0px !important;
+}
+body:not(.home) .page-content .content-part:first-child {
+	padding-bottom: 0;
 }
