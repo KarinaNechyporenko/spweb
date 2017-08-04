@@ -527,7 +527,7 @@ body:not(.home) .content-part.tab-part {
 	height: 40px;
 	text-transform: none;
 	font-weight: 400;
-	margin-bottom: 10px;
+	margin: 5px 10px 10px;
 }
 .short-descr div:last-child {
 	padding: 0px 0px 0px 10px;
@@ -753,7 +753,7 @@ body:not(.home) .content-part.tab-part {
 	font-size: 15px;
 }
 .radio-area {
-	width: 385px;
+	width: 455px;
     margin: auto;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -766,6 +766,39 @@ body:not(.home) .content-part.tab-part {
 .radio-inline+.radio-inline {
     margin-left: 40px;
 }
+.radio-inline label {
+	font-weight: 400;
+}
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin:-1px 10px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+    border: 1px solid rgb(187, 187, 187);
+    padding: 2px;
+}
+input[type="radio"] + label span::before {	
+	width:9px;
+    height:9px;
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+input[type="radio"]:checked + label span::before {
+	background: rgb(235, 28, 36);
+}
+
+
 .products .short-descr .webpart-img {
     width: 60px;
 }
@@ -821,3 +854,4 @@ select.form-control option:hover {
 body:not(.home) .page-content .content-part:first-child {
 	padding-bottom: 0;
 }
+

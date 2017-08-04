@@ -21,7 +21,7 @@
 	    padding-right: 80px;
 	}
 	.products .overview .product-item:nth-child(2) {
-	    padding-left: 80px;
+	    padding-left: 40px;
 	}
 	.products .overview .product-item div:nth-child(2) {
 	    padding-right: 10px;
@@ -78,7 +78,7 @@
 	}
 	.products .overview .product-item {
 		max-width: 100%;
-		padding-right: 15px;
+		padding-right: 40px;
 	}
 	.single-product .short-descr div:first-child {
 	    max-width: 100%;
@@ -179,11 +179,26 @@
 	.footer-nav li {
 		float: left;
 	}
+	.products .overview .product-item {
+		padding-right: 15px;
+	}
 	.products .overview .product-item:nth-child(2) {
 	    padding-left: 15px;
 	}
 	.products .overview .product-item:nth-child(1) {
-	    padding-bottom: 30px;
+	    padding-bottom: 70px;
+	}
+	.radio-area {
+	    width: 100%;
+    	text-align: left;
+    	max-width: 240px;
+	}
+	.radio-inline+.radio-inline {
+		margin-left: 0;
+	}
+	select.form-control {
+	    max-width: 240px;
+	    margin: auto;
 	}
 
 }
@@ -229,7 +244,6 @@
 	    width: 100%;
 	}
 	.products .overview .product-item {
-	    max-width: 70%;
 	    float: none;
 	    margin: auto;
 	}
@@ -246,13 +260,14 @@
 	    padding: 0px 0px 0px 0px;
 	    text-align: center;
 	}
-	.radio-area {
-	    width: 100%;
-    	text-align: left;
-    	max-width: 193px;
+	.products .short-descr div:last-child {
+		float: none;
 	}
-	.radio-inline+.radio-inline {
-		margin-left: 0;
+	.products .tab-content .row {
+		padding-bottom: 60px;
+	}
+	.products .overview .product-item:nth-child(1) {
+	    padding-bottom: 100px;
 	}
 }
 @media (max-width: 767px) and (max-height: 413px) {
