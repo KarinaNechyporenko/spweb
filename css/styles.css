@@ -22,6 +22,22 @@ body {
 	will-change: transform;
     transition: .22s;
 }
+.read-more .icon {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.icon-facebook {
+	background-image: url("../img/facebook.png");
+}
+.icon-googleplus {
+	background-image: url("../img/googleplus.png");
+}
+.icon-linkedin {
+	background-image: url("../img/linkedin.png");
+}
+.icon-twitter {
+	background-image: url("../img/twitter.png");
+}
 .icon-big-loupe {
 	background-image: url("../img/big-loupe.png");
 }
@@ -162,7 +178,7 @@ ul.navbar-right {
 	display: none;
 	height: 24px;
 	vertical-align: top;
-	font-weight: 300;
+	font-weight: 100;
 }
 .navbar-inverse .navbar-nav>.active>a, 
 .navbar-inverse .navbar-nav>.active>a:focus, 
@@ -480,14 +496,14 @@ body:not(.home) .content-part.tab-part {
 	padding-bottom: 0;
 }
 .short-descr div:first-child {
-	padding: 25px 30px 25px 0px;
-	max-width: 135px;
+	padding: 0px 30px 25px 0px;
+	max-width: 120px;
 }
 .short-descr .webpart-img {
 	width: 90px;
 }
 .short-descr .block-title.webpart-descr {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 .short-descr .category-name {
 	margin-top: 0;
@@ -499,6 +515,7 @@ body:not(.home) .content-part.tab-part {
 .short-descr p.webpart-descr {
 	font-size: 14px;
 	line-height: 1.2;
+	margin-bottom: 20px;
 }
 .short-descr div:nth-child(2) {
 	padding-left: 25px;
@@ -581,7 +598,7 @@ body:not(.home) .content-part.tab-part {
     height: 2px;
     display: block;
     background: rgb(243, 245, 245);
-    margin-top: 50px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -602,7 +619,7 @@ body:not(.home) .content-part.tab-part {
     top: -1.6px;
     position: relative;
 }
-#slide-item-1.active ~ .slider .bar{ margin-left: 0; }
+/*#slide-item-1.active ~ .slider .bar{ margin-left: 0; }
 #slide-item-2.active ~ .slider .bar{ margin-left: calc(100% / 6); }
 #slide-item-3.active ~ .slider .bar{ margin-left: calc((100% / 6) * 2); }
 #slide-item-4.active ~ .slider .bar{ margin-left: calc((100% / 6) * 3); }
@@ -615,7 +632,7 @@ body:not(.home) .content-part.tab-part {
 .products #slide-item-4.active ~ .slider .bar{ margin-left: calc((100% / 7) * 3); }
 .products #slide-item-5.active ~ .slider .bar{ margin-left: calc((100% / 7) * 4); }
 .products #slide-item-6.active ~ .slider .bar{ margin-left: calc((100% / 7) * 5); }
-.products #slide-item-7.active ~ .slider .bar{ margin-left: calc((100% / 7) * 6); }
+.products #slide-item-7.active ~ .slider .bar{ margin-left: calc((100% / 7) * 6); }*/
 /**** Tab Slider Animated End ****/
 
 /*.single-product .components-list {
@@ -818,7 +835,7 @@ input[type="radio"]:checked + label span::before {
 	padding-left: 0;
 }
 .products .overview div:nth-child(2) {
-    padding-right: 0px;
+    padding-right: 15px;
 }
 .product-item {
 	max-width: 520px;

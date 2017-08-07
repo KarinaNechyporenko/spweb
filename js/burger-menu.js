@@ -33,8 +33,24 @@
 	});
 	/**** Search on Page End ****/
 
-
+	/**** Tab to Dropdown ****/
 	$('#tab_selector').on('change', function (e) {
 	    $('.nav-tabs li a').eq($(this).val()).tab('show');
 	});
+
+	/**** Tab Slider Start ****/
+	var tabSelector = $(".tab-selector");
+	var slideBar = $(".slider .bar");
+	for (var i = 0; i < tabSelector.length; i++) {
+		tabSelector.eq(i).on("click", function() {
+			var prevItemsWidth = 0;
+			for (var itemIndex = $(this).data("index"); itemIndex > 0; itemIndex--) {
+				prevItemsWidth += tabSelector.eq(itemIndex-1).width();
+			}
+			slideBar.css("width",$(this).width());
+			slideBar.css("margin-left",prevItemsWidth);
+		})
+	}
+	/**** Tab Slider End ****/
+
 });
