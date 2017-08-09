@@ -1,4 +1,21 @@
 ﻿$( document ).ready(function() {
+	/**** TablesFit Function ****/
+	function tablesFit () {
+		var tableFixed = $(".table-fixed-left.notes tbody tr");
+		var tableScroll = $(".table-scroll.notes tbody tr");
+		for (var i = 0; i < tableFixed.length; i++) {
+			tableFixed.eq(i).css("height", tableScroll.eq(i).height());
+		}
+	}
+	/**** Data-Toggle TabToCollapse/CollapseToTab  Function****/
+	function tabToCollapse () {
+		if ($(document).width() < 992) {
+			$(".staked-tabs-part .tab-pane").removeClass("active");
+		} else {
+			$(".staked-tabs-part .tab-pane").eq(0).addClass("active");
+		} 
+	}
+
 	/**** Smooth Scroll Start ****/
 	$(window).on('load', function(){
         $("body").mCustomScrollbar({
@@ -52,5 +69,27 @@
 		})
 	}
 	/**** Tab Slider End ****/
+
+	tabToCollapse();
+
+	tabSelector.eq(1).on("click", function () {
+		setTimeout(function () {
+			tablesFit();
+		})
+		
+	})
+	
+	$(window).resize(function() {
+		tablesFit();
+		tabToCollapse(); 
+	})
+
+	$(window).on( "orientationchange", function () {
+		tabToCollapse();
+	})
+
+	$(".btn-tab").on("click", function () {
+		$(this).find(".plus-minus").toggleClass("opened");
+	})
 
 });

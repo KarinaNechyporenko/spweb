@@ -74,6 +74,56 @@ body {
 .bold-text {
 	font-weight: 700;
 }
+.collapse.in {
+    display: block !important;
+}
+
+
+.vertical {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+.horizontal {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+
+.opened .vertical {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 1;
+}
+.opened .horizontal {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.plus-minus .horizontal {
+    position: absolute;
+    background-color: rgb(235, 28, 36);
+    width: 24px;
+    height: 2px;
+    left: calc(100% - 30px);
+    margin-left: -12px;
+    top: 50%;
+    margin-top: -1px;
+}
+.plus-minus .vertical {
+    position: absolute;
+    background-color: rgb(235, 28, 36);
+    width: 2px;
+    height: 24px;
+    left: calc(100% - 30px);
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -12px;
+}
+
+
+
 
 button {
     width: 200px;
@@ -647,6 +697,9 @@ body:not(.home) .content-part.tab-part {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+.staked-tabs-part {
+	padding-bottom: 0 !important;
+}
 .table>thead>tr>th,
 .staked-tabs-part .nav-tabs li a {
 	font-size: 16px;
@@ -757,6 +810,7 @@ body:not(.home) .content-part.tab-part {
 }
 .notes .feature-name {
 	padding-left: 30px;
+	height: 63px;
 }
 .notes .webpart-descr {
 	font-size: 14px;
@@ -871,4 +925,39 @@ select.form-control option:hover {
 body:not(.home) .page-content .content-part:first-child {
 	padding-bottom: 0;
 }
-
+.table-responsive {
+	padding-left: 0;
+	padding-right: 0;
+}
+.table-fixed-right {
+	position: absolute;
+    background: #fff;
+    right: 40px;
+    z-index: 1;
+}
+.table-scroll table {
+	margin-bottom: 0;
+    min-width: 650px;
+    overflow-x: scroll;
+}
+.table-fixed-left {
+	position: absolute;
+    background: #fff;
+    left: 40px;
+    z-index: 1;
+}
+.table-scroll.notes {
+	float: right;
+}
+.table-scroll.notes  table {
+	min-width: 450px;
+}
+.btn-tab {
+	width: 100%;
+    text-align: left;
+    height: 40px;
+    text-transform: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
