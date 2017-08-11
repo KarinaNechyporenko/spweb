@@ -8,12 +8,35 @@
 		}
 	}
 	/**** Data-Toggle TabToCollapse/CollapseToTab  Function****/
+	
 	function tabToCollapse () {
-		if ($(document).width() < 992) {
-			$(".staked-tabs-part .tab-pane").removeClass("active");
-		} else {
-			$(".staked-tabs-part .tab-pane").eq(0).addClass("active");
-		} 
+		var jj = 0;
+		for (var i = 0; i < $("#requirements .staked-tabs-part .tab-pane").length; i++) {	
+			if ($(document).width() < 992) {
+				if ($("#requirements .staked-tabs-part .tab-pane").eq(i).hasClass("active")) {
+					$("#requirements .staked-tabs-part li").removeClass("active");
+					$("#requirements .staked-tabs-part .tab-pane").removeClass("active");
+					$("#requirements .staked-tabs-part .tab-pane").eq(i).addClass("in");
+				}
+			} else {
+				if ($("#requirements .staked-tabs-part .tab-pane").eq(i).hasClass("in")) {
+					jj++;
+					//localStorage.setItem("jj", jj);
+					console.log($(".staked-tabs-part .tab-pane.in"));
+					console.log(jj);
+					$("#requirements .staked-tabs-part .tab-pane").eq(i).removeClass("in");
+					//console.log(localStorage.getItem("jj"));
+					//jj = localStorage.getItem("jj");
+					if (jj == 1) {
+						console.log(jj);
+						$("#requirements .staked-tabs-part li").eq(i).addClass("active");
+						$("#requirements .staked-tabs-part .tab-pane").eq(i).addClass("active");
+						console.log($("#requirements .staked-tabs-part .active"));
+					}
+				}
+			} 
+		}
+		
 	}
 
 	/**** Smooth Scroll Start ****/
@@ -51,7 +74,7 @@
 	/**** Search on Page End ****/
 
 	/**** Tab to Dropdown ****/
-	$('#tab_selector').on('change', function (e) {
+	$('#tab_selector input').on('click', function (e) {
 	    $('.nav-tabs li a').eq($(this).val()).tab('show');
 	});
 
@@ -85,11 +108,29 @@
 	})
 
 	$(window).on( "orientationchange", function () {
-		tabToCollapse();
+		//tabToCollapse();
 	})
 
 	$(".btn-tab").on("click", function () {
-		$(this).find(".plus-minus").toggleClass("opened");
+		if($(this).hasClass("collapsed")){
+			$(this).find(".plus-minus").addClass("opened");
+		} else {
+			$(this).find(".plus-minus").removeClass("opened");
+		}
 	})
+
+if (Modernizr.touch) {
+			$(".radio-options").bind("click", function(event) {
+				if (!($(this).parent('.radio-container').hasClass("active")))	{
+				$(this).parent('.radio-container').addClass("active"); 
+				event.stopPropagation();
+				}
+				console.log($(this));
+			});	
+	$(".toggle").bind("click", function(){ 
+		$(this).parents('.radio-container').removeClass("active"); 
+		return false;
+		 });  
+	}
 
 });

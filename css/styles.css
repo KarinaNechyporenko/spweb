@@ -897,7 +897,7 @@ input[type="radio"]:checked + label span::before {
 .product-item:nth-child(2) {
 	float: right;
 }
-select.form-control {
+/*select.form-control {
 	height: 40px;
 }
 select.form-control:focus {
@@ -913,10 +913,10 @@ select.form-control option {
 }
 select.form-control option:hover {
 	background: #ccc !important;
-}
+}*/
 #tab_selector * {
-	height: 40px !important;
-	border: 1px solid #ccc !important;
+	/*height: 40px !important;
+	border: 1px solid #ccc !important;*/
 	outline: none !important;
 }
 .mCSB_inside > .mCSB_container {
@@ -961,3 +961,203 @@ body:not(.home) .page-content .content-part:first-child {
     border: none;
     border-bottom: 1px solid #ccc;
 }
+
+/*#tab_selector input {
+	display: inline-block;
+}
+
+.select {
+  font-size: 11px;
+  height: 45px;
+  line-height: 45px;
+  width: 200px;
+
+  position: relative;
+}
+.select,
+.select div {
+  border-bottom: 1px solid #ccc;
+  background: #f5f5f5;
+  color: #bbb;
+  	width: 100%;
+}
+.select div { 
+  width: 100%;
+  border-width: 0;
+}
+.select:hover div,
+.select:focus div,
+.select:active div {
+  border-width: 1px; 
+  position: absolute;
+  z-index: 4;
+  top: 45px;
+}
+/*.select div:hover {
+	height: 0;
+	top: 0px;
+}
+.select input + div:hover {
+	height: 0;
+}
+.select div:hover label {
+	height: 0;
+}*/
+/* Arrow */
+/*.select:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #bbb;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  width: 0;
+  z-index: 3;
+}
+.select label {
+  height: 0;
+  display: block;
+  padding: 0 10px; 
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.select input {
+  max-height: 0;
+  max-width: 0;
+  filter:alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+}
+.select input:checked + label { 
+	height: 45px; 
+}
+.select:hover input,
+.select:focus input,
+.select:active input {
+  min-height: 45px;
+  min-width: 100%;
+  height: 45px;
+  width: 100%;
+}
+/* Change to ".select:hover div label" if you want to hide first option after select */
+/*.select:hover label,
+.select:focus label,
+.select:active label {
+  height: 45px;
+  line-height: 45px; 
+  -ms-transition:.25s ease-in-out;
+  -moz-transition:.25s ease-in-out;
+  -o-transition:.25s ease-in-out;
+  -webkit-transition:.25s ease-in-out;
+  transition:.25s ease-in-out;
+}
+/* default */
+/*.select:hover:after,
+.select:focus:after,
+.select:active:after { 
+	border-top-color: #0f87e4; 
+}
+.select input:hover + label, 
+.select input:focus + label,
+.select input:active + label,
+.select:hover input:checked + label,
+.select:focus input:checked + label,
+.select:active input:checked + label { 
+	color: #0f87e4; 
+}
+.select input:hover + label,
+.select input:focus + label
+.select input:active + label { 
+	background-color: #dbecf8; 
+}*/
+
+.radio-container {
+  position: relative;
+  height: 4em; /* 3em (being the max-height of the inner container) + 1em ("margin") */
+ }
+.radio-container:hover {
+    z-index: 9999; }
+
+.radio-options {
+  position: absolute;
+  max-height: 3em;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.7s;
+}
+.radio-options:hover {
+  max-height: 100em; 
+}
+
+.radio-options .toggle {
+    position: relative;
+    cursor: pointer;
+    padding: 0.75em;
+    background: darkgreen;
+    border-radius: 10px;
+    z-index: 1; }
+/* li are stacked at the same position as .toggle, only .toggle is visible */
+  .radio-options li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+  }
+  .radio-options label {
+    display: block;
+    opacity: 0;
+    transition: 0s; }
+
+   .radio-options input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 3em;
+  opacity: 0;
+  z-index:1;
+  cursor: pointer; 
+}
+
+/* li elements have a normal flow within the .radio-options container */
+.radio-options:hover li {
+    position: relative; }
+.radio-options:hover label {
+    opacity: 1;
+    transition: 0.5s; }
+
+    .radio-options input:checked ~ label {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   opacity: 1;
+/* is above the .toggle so is visible */
+   z-index: 2;
+/* has tha same styles as .toggle */
+   padding: 0.75em;
+   background: darkgreen;
+   border-radius: 10px; }
+
+   .radio-options:hover input:checked ~ label {
+  position: static;
+  border-radius: 0; }
+  .no-touch .radio-container:hover, .active.radio-container  {
+    z-index: 9999; }
+.no-touch .radio-options:hover, .active .radio-options {
+  max-height: 100em; 
+}
+.no-touch .radio-options:hover li,  .active .radio-options li {
+    position: relative; }
+.no-touch .radio-options:hover label, .active .radio-options label {
+    opacity: 1;
+    transition: 0.5s; }
