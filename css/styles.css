@@ -458,6 +458,7 @@ body.home .page-content {
 	margin: auto;
 	margin-top: 5px;
 	margin-bottom: 0px;
+	min-width: 290px;
 }
 
 .blog-date {
@@ -931,7 +932,7 @@ select.form-control option:hover {
 .mCSB_inside > .mCSB_container {
     margin-right: 0px !important;
 }
-body:not(.home) .page-content .content-part:first-child {
+body.single-product .page-content .content-part:first-child {
 	padding-bottom: 0;
 }
 .table-responsive {
@@ -1024,3 +1025,41 @@ body:not(.home) .page-content .content-part:first-child {
     z-index: 3;
 }
 /**** Custom Select End ****/
+
+.blog-post .overview:nth-child(odd) .blog-image {
+	float: right;
+}
+.blog-post .overview div:nth-child(2) {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding: 0 15px 30px 15px;
+}
+.blog-post .overview:last-child div:nth-child(2) {
+	padding-bottom: 0;
+}
+.blog-post .blog-image {
+	margin-bottom: 30px;
+}
+.blog-post .overview:nth-child(even) .blog-image {
+	margin-right: 15px;
+}
+.blog-post .overview:nth-child(odd) .blog-image {
+	margin-left: 15px;
+}
+/*.blog-post .overview:last-child .blog-image {
+	margin-bottom: 0;
+}*/
+/*.blog-post .overview:not(:first-child) .blog-image {
+	margin-top: 30px;
+}*/
+.blog-post .block-title {
+	margin-bottom: 60px;
+}
+.blog-post .webpart-descr {
+	text-align: justify;
+}
+
+
+.blog .blog-block {
+	margin-bottom: 25px;
+}

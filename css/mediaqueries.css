@@ -266,6 +266,16 @@
 	.notes .feature-name {
 	    padding-left: 15px;
 	}
+	.icon {
+	    width: 22px;
+	    height: 22px;
+	    background-size: 100%;
+	    background-repeat: no-repeat;
+	}
+	.blog-post .overview .col-xs-12.blog-image {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 }
 @media (max-width: 460px) {

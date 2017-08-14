@@ -22,7 +22,7 @@
 			<nav class="navbar navbar-inverse header-nav">
 			  <div class="container">
 			    <div class="navbar-header">
-			      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
+			      <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a>
 			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
@@ -59,7 +59,7 @@
 		<div class="page-content container">
 
 	  		<div class="row content-part tab-part">
-		  		<ul class="nav nav-tabs nav-justified hidden-xs">
+		  		<ul class="nav nav-tabs nav-justified hidden-xs hidden-sm">
 					<li class="tab-selector active" data-index="0">
 						<a  href="#all" data-toggle="tab">All Products</a>
 					</li>
@@ -85,15 +85,33 @@
 			    		<div class="bar"></div>
 			  		</div>
 				</ul>
-				<select class="form-control visible-xs" id="tab_selector">
-			        <option value="0">All Products</option>
-			        <option value="1">E-Commerce</option>
-			        <option value="2">Communication</option>
-			        <option value="3">Password Security</option>
-			        <option value="4">Indicator Columns</option>
-			        <option value="5">Lookup Columns</option>
-			        <option value="6">Publishing</option>
-			    </select>
+			    <div class="component-list visible-xs visible-sm" id="tab_selector">
+                    <input value="0" class="component-selected-hidden" name="tab-selected" type="hidden">
+                    <p class="search-par component-selected">All Products</p><span class="icon icon-right"></span>
+                    <div class="options-list">
+                        <p class="option" value="0">
+                            All Products
+                        </p>
+                        <p class="option" value="1">
+                            E-Commerce
+                        </p>
+                        <p class="option" value="2">
+                            Communication
+                        </p>
+                        <p class="option" value="3">
+                            Password Security
+                        </p>
+                        <p class="option" value="4">
+                            Indicator Columns
+                        </p>
+                        <p class="option" value="5">
+                            Lookup Columns
+                        </p>
+                        <p class="option" value="6">
+                            Publishing
+                        </p>
+                    </div>
+                </div>
 				<form class="radio-area">
 				    <label class="radio-inline">
 				      	<input type="radio" name="optradio" checked="" id="radio01"><label for="radio01"><span></span>SharePoint On-Premises</label>
@@ -117,7 +135,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+								    	<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a>			
 						  			</div>
 	  							</div>
 						    </div>
@@ -132,7 +152,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -149,7 +171,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -164,7 +188,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -181,7 +207,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -196,7 +224,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -213,7 +243,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -228,7 +260,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -245,7 +279,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -260,7 +296,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -277,7 +315,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -292,7 +332,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -309,7 +351,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -324,7 +368,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a>				
 						  			</div>
 	  							</div>
 						    </div>
@@ -341,7 +387,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -356,7 +404,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -373,7 +423,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -388,7 +440,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -405,7 +459,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -420,7 +476,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="single-product.html">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -437,7 +495,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -452,7 +512,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -469,7 +531,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -484,7 +548,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -501,7 +567,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -516,7 +584,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
@@ -533,7 +603,9 @@
 								    </div>
 								    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-0 col-md-4 col-lg-4">
 								    	<p class="price">$20.00</p>
-						  				<button class="btn-red">View</button> 				
+						  				<a href="#">
+						  					<button class="btn-red">View</button> 	
+						  				</a> 				
 						  			</div>
 	  							</div>
 						    </div>
