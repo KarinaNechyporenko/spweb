@@ -138,6 +138,5 @@
     });
     /**** Search on Page End ****/
 
-
 });
 

@@ -391,28 +391,28 @@
 	       				
 	       				<div class="row staked-tabs-part">
 		       				<ul class="nav nav-tabs nav-stacked col-md-3 hidden-xs hidden-sm">
-								<li class="active">
+								<li class="active" data-href="2016">
 					        		<a  href="#2016" data-toggle="tab">SharePoint 2016 products</a>
 								</li>
-								<li>
+								<li data-href="2013">
 									<a href="#2013" data-toggle="tab">SharePoint 2013 products</a>
 								</li>
-								<li>
+								<li data-href="2010">
 									<a href="#2010" data-toggle="tab">SharePoint 2010 products</a>
 								</li>
-								<li>
+								<li data-href="2007">
 									<a href="#2007" data-toggle="tab">SharePoint 2007 products</a>
 								</li>
 							</ul>
 
 							<div class="tab-content col-md-9">
-								<button type="button" class="btn-tab visible-xs visible-sm" data-toggle="collapse" data-target="#2016" aria-expanded="false" value="0">SharePoint 2016 products 
-									<div class="plus-minus opened">
+								<button type="button" class="btn-tab visible-xs visible-sm" data-toggle="collapse" data-target="#2016" data-href2="2016" aria-expanded="false" value="0">SharePoint 2016 products 
+									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
 									</div>
 								</button>
-							 	<div class="tab-pane collapse in active" aria-expanded="false" id="2016" >
+							 	<div class="tab-pane collapse active" aria-expanded="false" id="2016" >
 							 		<div class="row ref-block">
 					          			<div class="col-md-4">
 					          				<p class="webpart-descr ref-title">Operating Systems:</p>
@@ -454,7 +454,7 @@
 					          			</div>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2013" aria-expanded="false" value="1">SharePoint 2013 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2013"  data-href2="2013" aria-expanded="false" value="1">SharePoint 2013 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -502,7 +502,7 @@
 					          			</div>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2010" aria-expanded="false" value="2">SharePoint 2010 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2010" data-href2="2010" aria-expanded="false" value="2">SharePoint 2010 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -550,7 +550,7 @@
 					          			</div>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2007" aria-expanded="false" value="3">SharePoint 2007 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2007" data-href2="2007" aria-expanded="false" value="3">SharePoint 2007 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -650,7 +650,7 @@
 									    <div class="vertical"></div>
 									</div>
 								</button>
-							 	<div class="tab-pane active collapse" aria-expanded="false" id="license">
+							 	<div class="tab-pane collapse" aria-expanded="false" id="license">
 							 		<div class="row instruction-block">
 								 		<p class="read-more">Download Parent Selector Column <a href="#" class="link">installation package</a> from ArtfulBits website, unpack the file, and run <span class="semi-text">Setup.exe</span>:
 										</p>
@@ -668,7 +668,7 @@
 									    <div class="vertical"></div>
 									</div>
 								</button>
-							 	<div class="tab-pane active collapse" aria-expanded="false" id="active">
+							 	<div class="tab-pane collapse" aria-expanded="false" id="active">
 							 		<div class="row instruction-block">
 								 		<p class="read-more">Download Parent Selector Column <a href="#" class="link">installation package</a> from ArtfulBits website, unpack the file, and run <span class="semi-text">Setup.exe</span>:
 										</p>
@@ -686,7 +686,7 @@
 									    <div class="vertical"></div>
 									</div>
 								</button>
-							 	<div class="tab-pane active collapse" aria-expanded="false" id="upgrade">
+							 	<div class="tab-pane collapse" aria-expanded="false" id="upgrade">
 							 		<div class="row instruction-block">
 								 		<p class="read-more">Download Parent Selector Column <a href="#" class="link">installation package</a> from ArtfulBits website, unpack the file, and run <span class="semi-text">Setup.exe</span>:
 										</p>
@@ -704,7 +704,7 @@
 									    <div class="vertical"></div>
 									</div>
 								</button>
-							 	<div class="tab-pane active collapse" aria-expanded="false" id="uninstall">
+							 	<div class="tab-pane collapse" aria-expanded="false" id="uninstall">
 							 		<div class="row instruction-block">
 								 		<p class="read-more">Download Parent Selector Column <a href="#" class="link">installation package</a> from ArtfulBits website, unpack the file, and run <span class="semi-text">Setup.exe</span>:
 										</p>
@@ -904,14 +904,17 @@
 		</footer>
 
 		<script>
-         var swiper = new Swiper('.components-list .swiper-container', {
+         var swiper1 = new Swiper('.components-list .swiper-container', {
              nextButton: '.components-list .swiper-button-next',
              prevButton: '.components-list .swiper-button-prev',
              slidesPerView: 5,
              paginationClickable: true,
 		     loop: true,
              simulateTouch: false,
+             autoplay: 1000,
              speed: 700,
+             preventClicks: false,
+             preventClicksPropagation: false,
              breakpoints: {
                  // when window width is <= 1200px
                  1200: {
@@ -939,6 +942,16 @@
                 }
              }
          });
+         $(".components-list .swiper-container").hover(
+		  	function() {
+		  		swiper1.autoplayPaused = true;
+				swiper1.stopAutoplay();
+		  	},
+		  	function() {
+		  		swiper1.autoplayPaused = false;
+				swiper1.startAutoplay();
+		  	}
+		);
         </script>
 
 	</body>

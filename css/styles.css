@@ -86,6 +86,9 @@ body {
 .collapse.in {
     display: block !important;
 }
+/*.collapse {
+    display: none !important;
+}*/
 
 
 .vertical {
@@ -409,7 +412,7 @@ body.home .page-content {
 .content-part:nth-child(2) .block-title {
 	margin-top: 20px;
 }
-.overview div:nth-child(2) {
+.overview .swiper-slide div:nth-child(2) {
 	padding-right: 70px;
 }
 .webpart-descr {
@@ -503,7 +506,8 @@ footer {
 	height: 210px;
 }
 body.home footer {
-	top: 115px;
+	top: 170px;
+	height: 265px;
 }
 .footer-nav {
 	margin: auto;
@@ -989,7 +993,7 @@ body.single-product .page-content .content-part:first-child {
     border: 1px solid #ccc;
     font-size: 20px;
   	color: rgb(51, 51, 51);
-  	font-weight: 500;
+  	font-weight: 400;
   	padding-left: 25px;
   	padding-right: 25px;
     line-height: 43px;
@@ -1063,3 +1067,30 @@ body.single-product .page-content .content-part:first-child {
 .blog .blog-block {
 	margin-bottom: 25px;
 }
+
+
+.swiper-pagination {
+	position: static;
+	margin-top: 20px;
+    margin-bottom: 10px;
+}
+.swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.2);
+    opacity: 1;
+    background: transparent;
+    vertical-align: middle;
+}
+.swiper-pagination-bullet-active {
+	width: 12px;
+    height: 12px;
+    border: none;
+    background: rgb(235, 28, 36);
+}
+
+
