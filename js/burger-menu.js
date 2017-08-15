@@ -9,39 +9,6 @@
 	}
 	/**** Data-Toggle TabToCollapse/CollapseToTab  Function****/
 	
-	// function tabToCollapse () {
-	// 	var jj = 0;
-	// 	for (var i = 0; i < $("#requirements .staked-tabs-part .tab-pane").length; i++) {	
-	// 		if ($(document).width() < 992) {
-	// 			if ($("#requirements .staked-tabs-part .tab-pane").eq(i).hasClass("active")) {
-	// 				$("#requirements .staked-tabs-part li").removeClass("active");
-	// 				$("#requirements .staked-tabs-part .tab-pane").removeClass("active");
-	// 				$("#requirements .staked-tabs-part .tab-pane").eq(i).addClass("in");
-	// 				$("#requirements .staked-tabs-part .btn-tab").eq(i).find(".plus-minus").addClass("opened");
-	// 			} else {
-	// 				$("#requirements .staked-tabs-part .btn-tab").eq(i).find(".plus-minus").removeClass("opened");
-	// 			}
-	// 		} else {
-	// 			if ($("#requirements .staked-tabs-part .tab-pane").eq(i).hasClass("in")) {
-	// 				jj++;
-	// 				//localStorage.setItem("jj", jj);
-	// 				//console.log($(".staked-tabs-part .tab-pane.in"));
-	// 				//console.log(jj);
-	// 				$("#requirements .staked-tabs-part .tab-pane").eq(i).removeClass("in");
-	// 				//console.log(localStorage.getItem("jj"));
-	// 				//jj = localStorage.getItem("jj");
-	// 				if (jj == 1) {
-	// 					//console.log(jj);
-	// 					$("#requirements .staked-tabs-part li").eq(i).addClass("active");
-	// 					$("#requirements .staked-tabs-part .tab-pane").eq(i).addClass("active");
-	// 					//console.log($("#requirements .staked-tabs-part .active"));
-	// 				}
-	// 			}
-	// 		} 
-	// 	}
-		
-	// }
-
 	function tabToCollapse () {
 		for (var i = 0; i < $(".staked-tabs-part .tab-pane").length; i++){
 			if ($(".staked-tabs-part .tab-pane").eq(i).hasClass("active")) {
@@ -124,6 +91,12 @@
 		tablesFit();
 		tabToCollapse(); 
 		tabSlider();
+		$(".component-selected").html($(".component-selected").parent().prev().find(".active a").html());
+
+		var dataIndex = "'" + $(".main-tab-part").find(".shown").attr("value") + "'";
+		$(".main-tab-part").find('[data-index=' + dataIndex + ']').trigger("click");
+		//console.log($(".main-tab-part").find(".shown").attr("value"));
+		//console.log($(".main-tab-part").find('[data-index=' + dataIndex + ']'));
 	})
 
 	$(window).on( "orientationchange", function () {
@@ -159,6 +132,8 @@
             $(this).find(options_area).addClass("show-list");
     }); 
     option.on("click", function () {
+    	$(this).parent().find(".shown").removeClass("shown");
+    	$(this).addClass("shown");
         $(this).parent().parent().find(".component-selected").html($(this).html());
         $(this).parent().parent().find("input").val($(this).attr("value"));
         $('.nav-tabs li a').eq($(this).parent().parent().find("input").val()).tab('show');

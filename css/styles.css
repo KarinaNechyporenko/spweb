@@ -928,7 +928,7 @@ select.form-control option {
 select.form-control option:hover {
 	background: #ccc !important;
 }*/
-#tab_selector * {
+#tab_select * {
 	/*height: 40px !important;
 	border: 1px solid #ccc !important;*/
 	outline: none !important;
@@ -1028,6 +1028,9 @@ body.single-product .page-content .content-part:first-child {
     display: block;
     z-index: 3;
 }
+.shown {
+	background: #efecec;
+}
 /**** Custom Select End ****/
 
 .blog-post .overview:nth-child(odd) .blog-image {
@@ -1091,6 +1094,10 @@ body.single-product .page-content .content-part:first-child {
     height: 12px;
     border: none;
     background: rgb(235, 28, 36);
+}
+
+.read-more.doc-title a {
+	word-wrap: break-word;
 }
 
 

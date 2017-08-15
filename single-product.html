@@ -80,7 +80,7 @@
 	  			</div>
 	  		</div>	
 
-	  		<div class="row content-part tab-part">
+	  		<div class="row content-part tab-part main-tab-part">
 		  		<ul class="nav nav-tabs nav-justified hidden-xs hidden-sm">
 					<li class="tab-selector active" data-index="0"> <!-- id="slide-item-1" -->
 						<a  href="#description" data-toggle="tab">Description</a>
@@ -105,11 +105,11 @@
 			  		</div>
 				</ul>
  				
-              	<div class="component-list visible-xs visible-sm" id="tab_selector">
+              	<div class="component-list visible-xs visible-sm" id="tab_select">
                     <input value="0" class="component-selected-hidden" name="tab-selected" type="hidden">
                     <p class="search-par component-selected">Description</p><span class="icon icon-right"></span>
                     <div class="options-list">
-                        <p class="option" value="0">
+                        <p class="option shown" value="0">
                             Description
                         </p>
                         <p class="option" value="1">
@@ -608,25 +608,25 @@
 							<p class="read-more">Before installation, please, check that your target server meets <a href="#" class="link">Parent Selector Column system requirements</a>. Also, it is recommended to install <a href="#" class="link">ArtfulBits License Manager</a> before (if it is not installed).
 							</p>
 		       				<ul class="nav nav-tabs nav-stacked col-md-3 hidden-xs hidden-sm">
-								<li class="active">
+								<li class="active" data-href="install">
 					        		<a  href="#install" data-toggle="tab">1. Installation</a>
 								</li>
-								<li>
+								<li data-href="license">
 									<a href="#license" data-toggle="tab">2. License Management</a>
 								</li>
-								<li>
+								<li data-href="active">
 									<a href="#active" data-toggle="tab">3. Activating / Deactivating</a>
 								</li>
-								<li>
+								<li data-href="upgrade">
 									<a href="#upgrade" data-toggle="tab">4. Product Upgrading</a>
 								</li>
-								<li>
+								<li data-href="uninstall">
 									<a href="#uninstall" data-toggle="tab">5. Uninstallation / Repairing</a>
 								</li>
 							</ul>
 
 							<div class="tab-content col-md-9">
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#install" aria-expanded="false" value="0">1. Installation 
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#install" data-href2="install"aria-expanded="false" value="0">1. Installation 
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -644,7 +644,7 @@
 										</p>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#license" aria-expanded="false" value="1">2. License Management 
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#license" data-href2="license" aria-expanded="false" value="1">2. License Management 
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -662,7 +662,7 @@
 										</p>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#active" aria-expanded="false" value="2">3. Activating / Deactivating 
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#active" data-href2="active" aria-expanded="false" value="2">3. Activating / Deactivating 
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -680,7 +680,7 @@
 										</p>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#upgrade" aria-expanded="false" value="3">4. Product Upgrading 
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#upgrade" data-href2="upgrade" aria-expanded="false" value="3">4. Product Upgrading 
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -698,7 +698,7 @@
 										</p>
 				          			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#uninstall" aria-expanded="false" value="4">5. Uninstallation / Repairing 
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#uninstall" data-href2="uninstall" aria-expanded="false" value="4">5. Uninstallation / Repairing 
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -738,22 +738,22 @@
 
 						<div class="row staked-tabs-part">
 		       				<ul class="nav nav-tabs nav-stacked col-md-3 hidden-xs hidden-sm">
-								<li class="active">
+								<li class="active" data-href="2016d">
 					        		<a  href="#2016d" data-toggle="tab">SharePoint 2016 products</a>
 								</li>
-								<li>
+								<li data-href="2013d">
 									<a href="#2013d" data-toggle="tab">SharePoint 2013 products</a>
 								</li>
-								<li>
+								<li data-href="2010d">
 									<a href="#2010d" data-toggle="tab">SharePoint 2010 products</a>
 								</li>
-								<li>
+								<li data-href="2007d">
 									<a href="#2007d" data-toggle="tab">SharePoint 2007 products</a>
 								</li>
 							</ul>
 
 							<div class="tab-content col-md-9">
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2016d" aria-expanded="false" value="0">SharePoint 2016 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2016d" data-href2="2016d" aria-expanded="false" value="0">SharePoint 2016 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -771,7 +771,7 @@
 					       				<p class="doc-descr">Zip file contains ArtfulBits Parent Selector Column and License Manager install files for SharePoint 2016, user guides and install guides documents for both products. For more details about installation process select Installation tab.</p>
 					       			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2013d" aria-expanded="false" value="1">SharePoint 2013 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2013d" data-href2="2013d" aria-expanded="false" value="1">SharePoint 2013 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -789,7 +789,7 @@
 					       				<p class="doc-descr">Zip file contains ArtfulBits Parent Selector Column and License Manager install files for SharePoint 2016, user guides and install guides documents for both products. For more details about installation process select Installation tab.</p>
 					       			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2010d" aria-expanded="false" value="2">SharePoint 2010 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2010d" data-href2="2010d" aria-expanded="false" value="2">SharePoint 2010 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -807,7 +807,7 @@
 					       				<p class="doc-descr">Zip file contains ArtfulBits Parent Selector Column and License Manager install files for SharePoint 2016, user guides and install guides documents for both products. For more details about installation process select Installation tab.</p>
 					       			</div>
 								</div>
-								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2007d" aria-expanded="false" value="3">SharePoint 2007 products
+								<button type="button" class="btn-tab visible-xs visible-sm collapsed" data-toggle="collapse" data-target="#2007d" data-href2="2007d" aria-expanded="false" value="3">SharePoint 2007 products
 									<div class="plus-minus">
 									    <div class="horizontal"></div>
 									    <div class="vertical"></div>
@@ -920,7 +920,7 @@
                  1200: {
 					 slidesPerView: 4,
 					 loop: true,
-					 autoplay: 3000,
+					 autoplay: 2000,
 					 speed: 700,
 					 paginationClickable: true,
                 },
@@ -928,7 +928,7 @@
                  767: {
 					 slidesPerView: 3,
 					 loop: true,
-					 autoplay: 3000,
+					 autoplay: 2000,
 					 speed: 700,
 					 paginationClickable: true,
                 },
@@ -936,7 +936,7 @@
                  440: {
 					 slidesPerView: 1,
 					 loop: true,
-					 autoplay: 3000,
+					 autoplay: 2000,
 					 speed: 700,
 					 paginationClickable: true,
                 }
