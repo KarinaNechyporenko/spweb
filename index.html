@@ -15,11 +15,11 @@
 	    <link rel="stylesheet" href="css/swiper.css">
 	    <link rel="stylesheet" href="css/styles.css">
 	    <link rel="stylesheet" href="css/mediaqueries.css">
+	    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
 	    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>   
-		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
 		<script src="js/main.js"></script>
 	</head>
-	<body class="home">
+	<body class="home ie10up">
 		<header>
 			<nav class="navbar navbar-inverse header-nav">
 			  <div class="container">
@@ -44,7 +44,8 @@
 					      		<a class="search"><span class="icon icon-big-loupe"></span><span class="icon icon-close"></span><span class="icon-label">Search</span></a>
 					      		<form class="search-form" action="" data-search-live="" method="GET">
 			                        <div class="form-wrap">
-			                            <input class="form-input" id="search-form-input" type="text" name="s" autocomplete="off" placeholder="Search">
+			                            <input class="form-input" id="search-form-input" type="text" name="s" autocomplete="off" placeholder="">
+			                            <div class="search-tip">Type in solution name</div>
 			                            <!-- <label class="form-label rd-input-label" for="rd-navbar-search-form-input">Search</label> -->
 			                        </div>
 			                        <button class="btn-search" type="submit"><span class="icon icon-big-loupe"></span></button>
@@ -231,6 +232,12 @@
 	  		</div>
 	  		<div class="row content-part blog-list">
 	  			<h2 class="block-title">What Clients Say</h2>
+
+	  			<div class="swiper-container">
+	  				<div class="swiper-wrapper">
+
+	  					<div class="swiper-slide">
+
 	  			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 blog-block">
 		  			<img class="review-img" src="img/left-quote.png" />
 		  			<h3 class="author-name">Julia Gnot<br/>
@@ -252,7 +259,39 @@
 		  			</h3>
 		  			<p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		  		</div>
+
+		  				</div>
+		  				<div class="swiper-slide">
+
+	  			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 blog-block">
+		  			<img class="review-img" src="img/left-quote.png" />
+		  			<h3 class="author-name">Juliat<br/>
+		  				<span>UI/UX</span>
+		  			</h3>
+		  			<p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+		  		</div>
+		  		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 blog-block">
+		  			<img class="review-img" src="img/left-quote.png" />
+		  			<h3 class="author-name">Julia<br/>
+		  				<span>UI/UX</span>
+		  			</h3>
+		  			<p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+		  		</div>
+		  		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 blog-block">
+		  			<img class="review-img" src="img/left-quote.png" />
+		  			<h3 class="author-name">Julia<br/>
+		  				<span>UI/UX</span>
+		  			</h3>
+		  			<p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+		  		</div>
+
+		  				</div>
+
+		  			</div>
+		  			<div class="swiper-pagination"></div>
+		  		</div>
 	  		</div>
+
 		</div>
 		<footer>
 			<div class="container">
@@ -326,12 +365,35 @@
 		);
 
          var swiper2 = new Swiper('.overview .swiper-container', {
-             pagination: '.swiper-pagination',
+             pagination: '.overview .swiper-pagination',
              slidesPerView: 1,
              paginationClickable: true,
              simulateTouch: false,
-             speed: 700,
+             speed: 2000,
          });
+
+          var swiper3 = new Swiper('.blog-list .swiper-container', {
+             pagination: '.blog-list .swiper-pagination',
+             //slidesPerView: 1,
+             paginationClickable: true,
+             simulateTouch: false,
+             speed: 700,
+             autoplay: 3000,
+             effect: 'fade',
+             fade: {
+			  crossFade: false
+			}
+         });
+         $(".blog-list .swiper-container").hover(
+		  	function() {
+		  		swiper3.autoplayPaused = true;
+				swiper3.stopAutoplay();
+		  	},
+		  	function() {
+		  		swiper3.autoplayPaused = false;
+				swiper3.startAutoplay();
+		  	}
+		);
         </script>
         
 	</body>

@@ -367,3 +367,25 @@
 	    height: 240px;
 	}
 }
+
+@media (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+   .home.ie10up .blog-block {
+   		margin-left: 40px;
+		margin-right: 40px;   
+	}
+	.blog.ie10up .blog-block {
+   		margin-left: 30px;
+		margin-right: 30px;   
+	}
+}
+@media (min-width: 767px) and (max-width: 992px) and (-ms-high-contrast: none), (min-width: 767px) and (max-width: 992px) and (-ms-high-contrast: active) {
+    .home.ie10up .blog-block {
+   		margin-left: auto;
+		margin-right: auto;   
+	}
+	.blog.ie10up .blog-block {
+   		margin-left: auto;
+		margin-right: auto;
+		min-width: auto;   
+	}
+}

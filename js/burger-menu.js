@@ -43,6 +43,30 @@
 
 	/**** Smooth Scroll Start ****/
 	$(window).on('load', function(){
+		 (function() {
+            //console.log("hi");
+            var lastTime = 0;
+            var vendors = ['ms', 'moz'];
+            for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+                window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+                window.cancelAnimationFrame =
+                  window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+            }
+            if (!window.requestAnimationFrame)
+                window.requestAnimationFrame = function(callback, element) {
+                    var currTime = new Date().getTime();
+                    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                    var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                      timeToCall);
+                    lastTime = currTime + timeToCall;
+                    return id;
+                };
+            if (!window.cancelAnimationFrame)
+                window.cancelAnimationFrame = function(id) {
+                    clearTimeout(id);
+                };
+        }());
+
         $("body").mCustomScrollbar({
             updateOnContentResize:true,
             theme:"dark-thin",
@@ -58,23 +82,23 @@
 	/**** Burger Menu Start ****/
 	$(".navbar-toggle").click(function () {
 		$(".header-nav").toggleClass("opened-menu");
-		//setTimeout(function () {
 			if ($(".header-nav").hasClass("opened-menu")) {
-				//$(".navbar-toggle").addClass("fixed");
 				$("body").addClass("mobile-fixed");
-				//$("header").css("z-index", "4");
 			} else {
-				//$(".navbar-toggle").removeClass("fixed");
 				$("body").removeClass("mobile-fixed");
-				//$("header").css("z-index", "0");
 			}	
-		//}, 200);
 	});
 	/**** Burger Menu End ****/
 
 	/**** Search on Page Start ****/
 	$(".search").click(function () {
 		$(this).closest("li").toggleClass("active");
+	});
+	$(".search-tip").click(function () {
+		$(this).addClass('down').prev().focus();
+	});
+	$(".search-form .form-input").focus(function () {
+		$(this).next().removeClass('down');
 	});
 	/**** Search on Page End ****/
 
@@ -146,7 +170,5 @@
             options_area.removeClass("show-list");
         }
     });
-
-
-
 });
+
