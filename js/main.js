@@ -1,39 +1,26 @@
 ﻿$( document ).ready(function() {
 	var maxHeaderHeight = $("header").css("max-height");
-	var minHeaderHeight = $("header").css("min-height");
-	var maxContentTop;
-	var minContentTop;
-    var pageTop;
+    var minHeaderHeight = $("header").css("min-height");
+    var maxContentTop;
+    var minContentTop;
 
-    //minContentTop = parseInt($("header").css("min-height")) + 160;
-    minContentTop = parseInt($(".page-content").css("top")) - 160;
+
+	/**** Header Resize without smooth scroll Start ****/
+
+    $(window).scroll(function () {
+        minContentTop = parseInt($("header").css("min-height")) + 160;
         if (document.documentElement.clientWidth < 768) {
             maxContentTop = parseInt($("header").css("max-height")) + 60;           
         }
         else {
             maxContentTop = parseInt($("header").css("max-height"));
-            //maxContentTop = parseInt($(".page-content").css("top"));
         }
-
-	/**** Header Resize without smooth scroll Start ****/
-
-    /*$(window).scroll(function () {
-	 	minContentTop = parseInt($("header").css("min-height")) + 160;
-	 	if (document.documentElement.clientWidth < 768) {
-	 		maxContentTop = parseInt($("header").css("max-height")) + 60;			
-	 	}
-	 	else {
-	 		maxContentTop = parseInt($("header").css("max-height"));
-	 	}
-        pageTop = parseInt($(".mCSB_container").css("top"));
-        //if ($(".mCSB_container").scrollTop() < -10) {
-        if (pageTop < 10) {
-            console.log("yep");
-        	$(".banner-text").css("display", "none");
+        if ($(document).scrollTop() > 10) {
+            $(".banner-text").css("display", "none");
             $("header").css("height", minHeaderHeight);
             $(".page-content").css("top", minContentTop + "px");
             if (document.documentElement.clientWidth > 768) {
-            	$("header").css("z-index", "4");
+                $("header").css("z-index", "4");
             }
              
         } else {
@@ -41,57 +28,57 @@
             $(".banner-text").css("display", "block");
             $(".page-content").css("top", maxContentTop + "px");
             if (document.documentElement.clientWidth > 768) {
-            	$("header").css("z-index", "0");
+                $("header").css("z-index", "0");
             }
              
         }
 
-    });*/
+     });
 
     /**** Header Resize without smooth scroll Start ****/
 
     /**** Smooth Scroll Start ****/
 
     $(window).on('load', function(){
-        (function() {
-            //console.log("hi");
-            var lastTime = 0;
-            var vendors = ['ms', 'moz'];
-            for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-                window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-                window.cancelAnimationFrame =
-                  window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
-            }
-            if (!window.requestAnimationFrame)
-                window.requestAnimationFrame = function(callback, element) {
-                    var currTime = new Date().getTime();
-                    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                    var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-                      timeToCall);
-                    lastTime = currTime + timeToCall;
-                    return id;
-                };
-            if (!window.cancelAnimationFrame)
-                window.cancelAnimationFrame = function(id) {
-                    clearTimeout(id);
-                };
-        }());
+        // (function() {
+        //     //console.log("hi");
+        //     var lastTime = 0;
+        //     var vendors = ['ms', 'moz'];
+        //     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        //         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        //         window.cancelAnimationFrame =
+        //           window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+        //     }
+        //     if (!window.requestAnimationFrame)
+        //         window.requestAnimationFrame = function(callback, element) {
+        //             var currTime = new Date().getTime();
+        //             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        //             var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+        //               timeToCall);
+        //             lastTime = currTime + timeToCall;
+        //             return id;
+        //         };
+        //     if (!window.cancelAnimationFrame)
+        //         window.cancelAnimationFrame = function(id) {
+        //             clearTimeout(id);
+        //         };
+        // }());
 
-        $("body").mCustomScrollbar({
-            updateOnContentResize:true,
-            theme:"dark-thin",
-            mouseWheelPixels:500,
-            scrollInertia:600,
-            callbacks:{
-                onScrollStart:function(){
-                    headerResizeMin(this);
-                },
-                onScroll:function(){
-                    headerResizeMax(this);
-                }
-            }
+        // $("body").mCustomScrollbar({
+        //     updateOnContentResize:true,
+        //     theme:"dark-thin",
+        //     mouseWheelPixels:500,
+        //     scrollInertia:600,
+        //     callbacks:{
+        //         onScrollStart:function(){
+        //             headerResizeMin(this);
+        //         },
+        //         onScroll:function(){
+        //             headerResizeMax(this);
+        //         }
+        //     }
 
-        });
+        // });
 
     });
         

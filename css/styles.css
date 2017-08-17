@@ -340,8 +340,11 @@ header {
 	position: relative;
     top: 499px;
 }
-body.home .page-content {
+/*body.home .page-content {
 	min-height: 2250px;
+}*/
+body.home .page-content {
+    min-height: 2067px;
 }
 
 /*.products-list,*/
@@ -430,7 +433,7 @@ body.home .page-content {
 .content-part:nth-child(2) .block-title {
 	margin-top: 20px;
 }
-.overview .swiper-slide div:nth-child(2) {
+.overview div:nth-child(2) {
 	padding-right: 70px;
 }
 .webpart-descr {
@@ -522,13 +525,14 @@ body.home .page-content {
 }
 footer {
 	position: relative;
-	top: 250px;
-	height: 210px;
+	/*top: 250px;
+	height: 210px;*/
+	top: 156px;
 }
-body.home footer {
+/*body.home footer {
 	top: 230px;
     height: 325px;
-}
+}*/
 .footer-nav {
 	margin: auto;
     width: 330px;
