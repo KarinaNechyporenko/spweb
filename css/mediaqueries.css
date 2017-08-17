@@ -204,7 +204,7 @@
 	
 	.header-nav ul.navbar-right {
 		height: 75%;
-		overflow: scroll;
+		overflow: auto;
 		padding-top: 90px;
 	}
 	.navbar-inverse .navbar-nav>li>a {
@@ -390,6 +390,11 @@
 	.home .overview .swiper-container {
 	    min-height: 530px;
 	}
+}
+@media (max-height: 505px) and (max-width: 767px) {
+	.header-nav ul.navbar-right {
+    	height: 330px;
+    }
 }
 @media (max-width: 767px) and (max-height: 413px) {
 	.header-nav ul.navbar-right {
