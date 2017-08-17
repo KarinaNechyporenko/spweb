@@ -318,7 +318,7 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-    transition: 400ms ease-out;
+    transition: height 400ms ease-out;
 }
 .banner-text {
 	position: relative;
@@ -345,6 +345,7 @@ header {
 }*/
 body.home .page-content {
     min-height: 2067px;
+    transition: 600ms ease-out;
 }
 
 /*.products-list,*/
