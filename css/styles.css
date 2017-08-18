@@ -1152,6 +1152,7 @@ body.single-product .page-content .content-part:first-child {
 .modal-footer {
     padding: 25px;
     border-top: none;
+    text-align: center;
 }
 button.close {
 	position: absolute;
@@ -1175,7 +1176,7 @@ button.close {
     font-weight: 400;
     text-align: center;
 }
-.webpart-descr.tip {
+.modal .webpart-descr.tip {
 	font-size: 12px;
 	line-height: 1.2;
 	font-style: italic;
@@ -1188,17 +1189,14 @@ button.close {
 .modal-price {
 	text-align: left;
 }
-.modal .total-price {
+.modal .price.total-price {
     font-size: 30px;
     line-height: 1.2;
     margin-top: 10px;
     margin-bottom: 0;
 }
 .modal button {
-	margin: auto;
-}
-.modal .btn-black {
-	float: left;
+	margin: 0 15px 15px;
 }
 
 /**** Custom Checkbox Start ****/
