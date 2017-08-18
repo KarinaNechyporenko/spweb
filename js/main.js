@@ -1,4 +1,4 @@
-﻿$( document ).ready(function() {
+$( document ).ready(function() {
 	var maxHeaderHeight = $("header").css("max-height");
     var minHeaderHeight = $("header").css("min-height");
     var maxContentTop;

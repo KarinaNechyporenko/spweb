@@ -1,4 +1,4 @@
-﻿@media (max-width: 1210px) {
+@media (max-width: 1210px) {
 	.banner-text h2 {
 		font-size: 43px;
 	}
@@ -56,7 +56,8 @@
 }
 @media (min-width: 767px) {
 	.modal-dialog {
-	    width: 360px;
+	    width: 380px;
+	    margin: 130px auto;
 	}
 }
 @media (min-width: 767px) and (max-width: 1200px) {

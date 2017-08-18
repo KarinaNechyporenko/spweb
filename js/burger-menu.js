@@ -1,4 +1,4 @@
-﻿$( document ).ready(function() {
+$( document ).ready(function() {
 	/**** TablesFit Function ****/
 	function tablesFit () {
 		var tableFixed = $(".table-fixed-left.notes tbody tr");
@@ -175,19 +175,36 @@
         }
     });
     /****Custom Select End ****/
-
+	var totalPrice = 0; 
     $("#dev-check").on("click", function () {
     	if ($(this).is(':checked')) {
-    		if ($("#support-check").prop("checked", false)) {
-    			$("#support-check").prop("checked", true)
+    		if (!($("#support-check").is(':checked'))) {
+    			$("#support-check").trigger("click");
+    			
     		}
     	$("#support-check").prop("disabled", true);
     	$("#support-check").parent().addClass("disabled");
     	} else {
     		$("#support-check").prop("disabled", false);
     		$("#support-check").parent().removeClass("disabled");
-    	}
-    	
+    	}    	
     })
+
+    
+    var checkedOptions = $(".modal-body").find("input[name=optcheck][checked]");
+    for (var i = 0; i < checkedOptions.length; i++) {
+    	totalPrice += parseInt(checkedOptions.eq(i).data("value"));
+    }
+    $(".total-price").html("$" + totalPrice);
+    
+    $("input[name=optcheck]").on("change", function () {
+    	if($(this).is(":checked")) {
+    		totalPrice += parseInt($(this).data("value"));
+    	} else {
+    		totalPrice -= parseInt($(this).data("value"));
+    	}
+
+	    $(".total-price").html("$" + totalPrice);
+	})
 });
 
