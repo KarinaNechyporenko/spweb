@@ -54,6 +54,11 @@
 	    width: calc(100% / 7);
 	}*/
 }
+@media (min-width: 767px) {
+	.modal-dialog {
+	    width: 360px;
+	}
+}
 @media (min-width: 767px) and (max-width: 1200px) {
 	.container {
 	    width: 100%;

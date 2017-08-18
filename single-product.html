@@ -76,7 +76,7 @@
 			    </div>
 			    <div class="col-xxs-offset-0 col-xxs-12 col-xs-offset-3 col-xs-9 col-sm-offset-2 col-sm-10 col-md-offset-0 col-md-2 col-lg-2">
 			    	<p class="price">$20.00</p>
-	  				<button class="btn-red">Buy License</button> 	
+	  				<button class="btn-red" data-toggle="modal" data-target="#buyLicenseModal">Buy License</button> 	
 	  				<button class="btn-black">Demo</button> 
 	  				<p class="read-more"><a href="#" class="link">Try 30-days FREE Trial License!</a></p>				
 	  			</div>
@@ -904,6 +904,85 @@
 				<p class="copyright">© 2005-2017 ArtfulBits. All rights reserved.</p>
 			</div>
 		</footer>
+
+		<!-- Modal -->
+		 <div class="modal fade" id="buyLicenseModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		          	<h4 class="modal-title">Buy License</h4>
+		        </div>
+		        <div class="modal-body">
+		          	<div class="row">
+		          		<div class="col-xs-3">
+		          			<p class="webpart-descr">Product:</p>
+		          		</div>
+		          		<div class="col-xs-7 col-xs-offset-right-2 min-padding">
+		          			<p class="block-title webpart-descr">Parent Selector v.2.22</p>
+		          		</div>
+
+		          		<div class="col-xs-3">
+		          			<p class="webpart-descr">Type:</p>
+		          		</div>
+		          		<div class="col-xs-7 col-xs-offset-right-2 min-padding">
+		          			<p class="block-title webpart-descr">Desktop</p>
+		          		</div>
+
+		          		<div class="col-xs-3">
+		          			<p class="webpart-descr">License:</p>
+		          		</div>
+		          		<div class="col-xs-7 min-padding">
+				          	<label class="checkbox-inline">
+						      	<input type="checkbox" name="optcheck" checked="" id="full-check"><label for="full-check"><span></span>Full License</label>
+						      	<p class="tip webpart-descr">One full license can be installed on 
+									one farm. Validity period: Perpetual.
+								</p>
+						    </label>
+						</div>
+						<div class="col-xs-2 modal-price">
+		          			<p class="price webpart-descr">$250</p>
+		          		</div>
+						<div class="col-xs-offset-3 col-xs-7 min-padding">
+							<label class="checkbox-inline">
+						      	<input type="checkbox" name="optcheck" id="dev-check"><label for="dev-check"><span></span>Developer license</label>
+						      	<p class="tip webpart-descr">One full license can be installed on
+								one farm.Validity period: Perpetual.
+								</p>
+						    </label>
+		          		</div>
+		          		<div class="col-xs-2 modal-price">
+		          			<p class="price webpart-descr">$100</p>
+		          		</div>
+		          		<div class="col-xs-3">
+		          			<p class="webpart-descr">Services:</p>
+		          		</div>
+		          		<div class="col-xs-7 min-padding">
+		          			<label class="checkbox-inline">
+						      	<input type="checkbox" name="optcheck" checked="" id="support-check"><label for="support-check"><span></span>Support Subscription</label>
+						      	<p class="tip webpart-descr">Once purchased it covers all 
+								ArtfulBits SharePoint products in your property during 1 year. <span class="red-text">Support</span>
+								</p>
+						    </label>
+						</div>
+						<div class="col-xs-2 modal-price">
+		          			<p class="price webpart-descr">$400</p>
+		          		</div>
+		          		<div class="col-xs-12 ">
+		          			<p class="total-price price webpart-descr">$650.00</p>
+		          		</div>
+		          	</div>
+		        </div>
+		        <div class="modal-footer">
+		          	<button type="button" class="btn-black" data-dismiss="modal">Cancel</button>
+		          	<button type="button" class="btn-red">Add to Cart</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		</div>
 
 		<script>
          var swiper1 = new Swiper('.components-list .swiper-container', {

@@ -148,7 +148,7 @@
 		}
 	})
 
-
+	/****Custom Select Start ****/
 	var select = $(".component-list"),
         options_area = $(".options-list"),
         option = $(".option");
@@ -174,5 +174,20 @@
             options_area.removeClass("show-list");
         }
     });
+    /****Custom Select End ****/
+
+    $("#dev-check").on("click", function () {
+    	if ($(this).is(':checked')) {
+    		if ($("#support-check").prop("checked", false)) {
+    			$("#support-check").prop("checked", true)
+    		}
+    	$("#support-check").prop("disabled", true);
+    	$("#support-check").parent().addClass("disabled");
+    	} else {
+    		$("#support-check").prop("disabled", false);
+    		$("#support-check").parent().removeClass("disabled");
+    	}
+    	
+    })
 });
 

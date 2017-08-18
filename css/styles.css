@@ -86,6 +86,9 @@ body {
 .collapse.in {
     display: block !important;
 }
+.red-text {
+	color: rgb(235, 28, 36);
+}
 /*.collapse {
     display: none !important;
 }*/
@@ -628,7 +631,8 @@ body:not(.home) .content-part.tab-part {
 .link {
 	text-decoration: underline;	
 }
-.short-descr button {
+.short-descr button,
+.modal button {
 	width: 140px;
 	height: 40px;
 	text-transform: none;
@@ -857,11 +861,7 @@ body:not(.home) .content-part.tab-part {
 
 }
 
-/**** PRODUCTS ****/
-
-.products .nav-tabs li a {
-	font-size: 15px;
-}
+/**** Custom Radio Start ****/
 .radio-area {
 	width: 455px;
     margin: auto;
@@ -907,7 +907,13 @@ input[type="radio"] + label span::before {
 input[type="radio"]:checked + label span::before {
 	background: rgb(235, 28, 36);
 }
+/**** Custom Radio End ****/
 
+/**** PRODUCTS ****/
+
+.products .nav-tabs li a {
+	font-size: 15px;
+}
 
 .products .short-descr .webpart-img {
     width: 60px;
@@ -936,23 +942,7 @@ input[type="radio"]:checked + label span::before {
 .product-item:nth-child(2) {
 	float: right;
 }
-/*select.form-control {
-	height: 40px;
-}
-select.form-control:focus {
-	outline: none;
-	border: 1px solid #ccc;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-select.form-control option {
-	height: 40px !important;
-	border: 1px solid #ccc !important;
-	outline: none !important;
-}
-select.form-control option:hover {
-	background: #ccc !important;
-}*/
+
 #tab_select * {
 	/*height: 40px !important;
 	border: 1px solid #ccc !important;*/
@@ -1136,3 +1126,120 @@ body.single-product .page-content .content-part:first-child {
 .home .blog-list .swiper-container {
 	min-height: 200px;
 }
+
+/**** Modal ****/
+.modal-content {
+	border-radius: 0;
+}
+.modal .webpart-descr {
+	font-weight: 400;
+}
+.modal .block-title,
+.modal .price {
+	font-size: 16px;
+	line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0;
+    font-weight: 400;
+}
+.modal-header {
+    padding: 25px;
+    border-bottom: none;    
+}
+.modal-body {
+	padding: 0 25px;
+}
+.modal-footer {
+    padding: 25px;
+    border-top: none;
+}
+button.close {
+	position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 35px;
+    font-weight: 300;
+    overflow: visible;
+    color: rgb(235, 28, 36);
+    text-shadow: none;
+    opacity: 1;
+    width: 35px;
+    height: auto;
+    text-align: right;
+    padding-right: 5px;
+}
+.modal-title {
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+    line-height: 1.2;  
+    font-weight: 400;
+    text-align: center;
+}
+.webpart-descr.tip {
+	font-size: 12px;
+	line-height: 1.2;
+	font-style: italic;
+	margin-top: -5px;
+}
+.min-padding,
+.modal-price {
+	padding-left: 5px;
+}
+.modal-price {
+	text-align: left;
+}
+.modal .total-price {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.modal button {
+	margin: auto;
+}
+.modal .btn-black {
+	float: left;
+}
+
+/**** Custom Checkbox Start ****/
+.checkbox-inline  {
+	font-size: 16px;
+    color: rgb(48, 48, 48);
+    line-height: 1.5;
+    padding-left: 0;
+}
+
+.checkbox-inline label {
+	font-weight: 400;
+}
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin:-1px 10px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    border: 1px solid rgb(187, 187, 187);
+    padding-top: 1px;
+}
+input[type="checkbox"] + label span::before {	
+	width:13px;
+    height:11px;
+    display: block;
+    position: absolute;
+    content: '';
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+input[type="checkbox"]:checked + label span::before {
+	background: url(../img/tick.png);
+	background-repeat: no-repeat;
+}
+input[type="checkbox"]:disabled + label,
+.disabled {
+	opacity: 0.7;
+}
+/**** Custom Checkbox End ****/
