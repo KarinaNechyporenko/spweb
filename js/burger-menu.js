@@ -136,7 +136,7 @@ $( document ).ready(function() {
 		tabToCollapse();
 	})
 	document.addEventListener("touchstart", function () {
-	    $(window).off("risize");
+	    $(window).off("resize");
 	});
 	$(".btn-tab").on("click", function () {
 		console.log("btn-tab");
