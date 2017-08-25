@@ -135,7 +135,9 @@ $( document ).ready(function() {
 		console.log("orientation change");
 		tabToCollapse();
 	})
-
+	document.addEventListener("touchstart", function () {
+	    $(window).off("risize");
+	});
 	$(".btn-tab").on("click", function () {
 		console.log("btn-tab");
 		if(!($(this).next().hasClass("in"))){
