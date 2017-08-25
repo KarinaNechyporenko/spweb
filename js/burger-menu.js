@@ -3,25 +3,34 @@ $( document ).ready(function() {
 	function tablesFit () {
 		var tableFixed = $(".table-fixed-left.notes tbody tr");
 		var tableScroll = $(".table-scroll.notes tbody tr");
+		// var tableRightHead = $(".table-fixed-right thead th");
+		// var tableRightHeadSmall;
 		for (var i = 0; i < tableFixed.length; i++) {
 			tableFixed.eq(i).css("height", tableScroll.eq(i).height());
 		}
+		// if ($(document).width() < 992) {
+		// 	for (var i = 0; i < tableRightHead.length; i++) {
+		// 		tableRightHeadSmall = tableRightHead.eq(i).html().slice(0,2) + tableRightHead.eq(i).html().slice(5,7);
+		// 		tableRightHead.eq(i).html(tableRightHeadSmall);
+		// 	}
+		// }
+
 	}
 	/**** Data-Toggle TabToCollapse/CollapseToTab  Function****/
 	
 	function tabToCollapse () {
-		console.log("tabToCollapse");
+		//console.log("tabToCollapse");
 		for (var i = 0; i < $(".staked-tabs-part .tab-pane").length; i++){
 			if ($(".staked-tabs-part .tab-pane").eq(i).hasClass("active")) {
 				//console.log($(".staked-tabs-part .tab-pane").hasClass("active"));
 				$(".staked-tabs-part .tab-pane").eq(i).addClass("in");
 				$(".staked-tabs-part .tab-pane").eq(i).prev().find(".plus-minus").addClass("opened");
-				console.log("tabToCollapse add in");
+				//console.log("tabToCollapse add in");
 			}
 			else {
 				$(".staked-tabs-part .tab-pane").eq(i).removeClass("in");
 				$(".staked-tabs-part .tab-pane").eq(i).prev().find(".plus-minus").removeClass("opened");
-				console.log("tabToCollapse remove in");
+				//console.log("tabToCollapse remove in");
 			}
 		}
 	}
@@ -44,7 +53,13 @@ $( document ).ready(function() {
 				slideBar.css("margin-left",prevItemsWidth);
 				//console.log($(this).width());
 			})
+			$(".component-selected").html($(".component-selected").parent().prev().find(".active a").html());
 		//}
+		var dataIndex = "'" + $(".main-tab-part").find(".shown").attr("value") + "'";
+		$(".main-tab-part").find('[data-index=' + dataIndex + ']').trigger("click");
+		//console.log($(".main-tab-part").find(".shown").attr("value"));
+		//console.log($(".main-tab-part").find('[data-index=' + dataIndex + ']'));
+		
 	}
 
 
@@ -82,7 +97,8 @@ $( document ).ready(function() {
         // });
     });
 	/**** Smooth Scroll End ****/
-	console.log("ready");
+	//console.log("ready");
+	//tablesFit();
 	tabSlider();
 	tabToCollapse();
 
@@ -112,36 +128,34 @@ $( document ).ready(function() {
 		
 
 	tabSelector.eq(1).on("click", function () {
+		//console.log("specifications");
 		setTimeout(function () {
 			tablesFit();
-		})
+		});
 		
 	})
 	
 	$(window).resize(function() {
-		console.log("window resize");
+		//console.log("window resize");
 		tablesFit();
 		tabToCollapse(); 
 		tabSlider();
-		$(".component-selected").html($(".component-selected").parent().prev().find(".active a").html());
-
-		var dataIndex = "'" + $(".main-tab-part").find(".shown").attr("value") + "'";
-		$(".main-tab-part").find('[data-index=' + dataIndex + ']').trigger("click");
-		//console.log($(".main-tab-part").find(".shown").attr("value"));
-		//console.log($(".main-tab-part").find('[data-index=' + dataIndex + ']'));
 	})
 
 	$(window).on( "orientationchange", function () {
-		console.log("orientation change");
+		//console.log("orientation change");
 		tabToCollapse();
+		tabSlider();
+		tablesFit();
 	})
 	document.addEventListener("touchstart", function () {
+		//console.log("touchstart");
 	    $(window).off("resize");
 	});
 	$(".btn-tab").on("click", function () {
-		console.log("btn-tab");
+		//console.log("btn-tab");
 		if(!($(this).next().hasClass("in"))){
-			console.log("btn-tab add active");
+			//console.log("btn-tab add active");
 			$(this).find(".plus-minus").addClass("opened");
 			var dataHref = "'"+ $(this).data("href2") + "'";
 			//$(this).parent().parent().find("li").data($(this).data("href")).addClass("active");
@@ -152,7 +166,7 @@ $( document ).ready(function() {
 			$(this).parent().parent().find(".nav-stacked li").removeClass("active");
 			$(this).parent().parent().find('[data-href=' + dataHref + ']').addClass("active");
 		} else {
-			console.log("btn-tab remove active");
+			//console.log("btn-tab remove active");
 			$(this).find(".plus-minus").removeClass("opened");
 			$(this).next().removeClass("active");
 		}
@@ -176,7 +190,12 @@ $( document ).ready(function() {
         $(this).parent().parent().find("input").val($(this).attr("value"));
         $('.nav-tabs li a').eq($(this).parent().parent().find("input").val()).tab('show');
         $(this).parent().find(".show-list").removeClass("show-list");
+        if($(this).attr("value") == 1) {
+        	tablesFit();
+        	//console.log("specifications2");
+        }
     });
+    
     $(window).on("click touchend", function (e) {
         if ($(e.target).closest(options_area).length || $(e.target).closest(option).length || $(e.target).closest(select).length) {
             e.stopPropagation();

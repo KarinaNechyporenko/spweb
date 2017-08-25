@@ -743,6 +743,12 @@ body:not(.home) .content-part.tab-part {
 .staked-tabs-part {
 	padding-bottom: 0 !important;
 }
+.table-title {
+	text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
 .table>thead>tr>th,
 .staked-tabs-part .nav-tabs li a {
 	font-size: 16px;
@@ -757,6 +763,9 @@ body:not(.home) .content-part.tab-part {
     color: rgb(48, 48, 48);
     line-height: 1.7;
     text-align: center;
+}
+.notes .table>tbody>tr>td {
+    min-height: 65px;
 }
 .table>tbody>tr>td.feature-name {
 	text-align: left;
