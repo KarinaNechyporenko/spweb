@@ -10,15 +10,18 @@ $( document ).ready(function() {
 	/**** Data-Toggle TabToCollapse/CollapseToTab  Function****/
 	
 	function tabToCollapse () {
+		console.log("tabToCollapse");
 		for (var i = 0; i < $(".staked-tabs-part .tab-pane").length; i++){
 			if ($(".staked-tabs-part .tab-pane").eq(i).hasClass("active")) {
 				//console.log($(".staked-tabs-part .tab-pane").hasClass("active"));
 				$(".staked-tabs-part .tab-pane").eq(i).addClass("in");
 				$(".staked-tabs-part .tab-pane").eq(i).prev().find(".plus-minus").addClass("opened");
+				console.log("tabToCollapse add in");
 			}
 			else {
 				$(".staked-tabs-part .tab-pane").eq(i).removeClass("in");
 				$(".staked-tabs-part .tab-pane").eq(i).prev().find(".plus-minus").removeClass("opened");
+				console.log("tabToCollapse remove in");
 			}
 		}
 	}
@@ -79,7 +82,7 @@ $( document ).ready(function() {
         // });
     });
 	/**** Smooth Scroll End ****/
-
+	console.log("ready");
 	tabSlider();
 	tabToCollapse();
 
@@ -116,6 +119,7 @@ $( document ).ready(function() {
 	})
 	
 	$(window).resize(function() {
+		console.log("window resize");
 		tablesFit();
 		tabToCollapse(); 
 		tabSlider();
@@ -128,23 +132,27 @@ $( document ).ready(function() {
 	})
 
 	$(window).on( "orientationchange", function () {
+		console.log("orientation change");
 		tabToCollapse();
 	})
 
 	$(".btn-tab").on("click", function () {
+		console.log("btn-tab");
 		if(!($(this).next().hasClass("in"))){
+			console.log("btn-tab add active");
 			$(this).find(".plus-minus").addClass("opened");
 			var dataHref = "'"+ $(this).data("href2") + "'";
 			//$(this).parent().parent().find("li").data($(this).data("href")).addClass("active");
 			//console.log($(this).parent().parent().find(".nav-stacked li"));
 			//console.log(dataHref);
 			$(this).parent().find(".tab-pane").removeClass("active");
-			$(this).next().addClass("active")
+			$(this).next().addClass("active");
 			$(this).parent().parent().find(".nav-stacked li").removeClass("active");
 			$(this).parent().parent().find('[data-href=' + dataHref + ']').addClass("active");
 		} else {
+			console.log("btn-tab remove active");
 			$(this).find(".plus-minus").removeClass("opened");
-
+			$(this).next().removeClass("active");
 		}
 	})
 
