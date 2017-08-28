@@ -7,6 +7,10 @@ body {
 	background-color: #f3f5f5;
 	/*width: 100%;*/
 }
+sup, sub {
+	top: -.7em;
+	font-size: 60%;
+}
 .fixed {
 	position: fixed;
 }
@@ -150,7 +154,7 @@ button {
     -webkit-transition:.2s ease-out;
     overflow:hidden;
     cursor:pointer;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     position: relative;
     z-index: 1;
 
@@ -196,7 +200,7 @@ button {
     -o-transform:skewX(-25deg);
     -ms-transform:skewX(-25deg);
     left:-15px;
-    width:125%;
+    width:130%;
 }
 .btn-red:hover,
 .btn-black:hover {
@@ -526,6 +530,11 @@ body.home .page-content {
 	color: rgb(51, 51, 51);
 	line-height: 1.2;
 	text-align: justify;
+	height: 80px;
+	background: #fff;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
 }
 footer {
 	position: relative;
@@ -559,7 +568,9 @@ footer {
 .swiper-button-prev, .swiper-button-next {
 	position: relative;
 	top: -100px;
-	display: none;
+	/*display: none;*/
+	display: block;
+    z-index: 3;
 }
 .swiper-button-next {
 	right: -49%;

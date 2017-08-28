@@ -12,10 +12,10 @@
 	.overview div:nth-child(2) {
 	    padding-right: 15px;
 	}
-	.swiper-button-prev, .swiper-button-next {
+	/*.swiper-button-prev, .swiper-button-next {
 		display: block;
 		z-index: 3;
-	}
+	}*/
 	.products .overview .product-item {
 	    padding-left: 15px;
 	    padding-right: 80px;
@@ -46,23 +46,16 @@
 	    font-size: 11px;
 	}
 }
-@media (min-width: 992px) {
-	/*.single-product .nav-tabs.nav-justified>li,
-	.products .nav-tabs.nav-justified>li {
-	    display: block;
-	    float: left;
-	}*/
-	/*.single-product .nav-tabs.nav-justified>li {
-	    width: calc(100% / 6);
-	}*/
-	/*.products .nav-tabs.nav-justified>li {
-	    width: calc(100% / 7);
-	}*/
-}
 @media (min-width: 767px) {
 	.modal-dialog {
 	    width: 400px;
 	    margin: 130px auto;
+	}
+	.modal .btn-red {
+		margin-left: 12px;
+	}
+	.modal .btn-black {
+		margin-right: 12px;
 	}
 }
 @media (min-width: 767px) and (max-width: 1200px) {

@@ -149,7 +149,7 @@
 	  		</div>	
 
 	  		<div class="row content-part components-list">
-	  			<h2 class="block-title">Components for Microsoft® SharePoint®</h2>
+	  			<h2 class="block-title">Components for Microsoft<sup>®</sup> SharePoint<sup>®</sup></h2>
 	  			<div class="swiper-container">
 	  				<div class="swiper-wrapper">
 
@@ -315,85 +315,101 @@
 
 
 		<script>
-         var swiper1 = new Swiper('.components-list .swiper-container', {
-             nextButton: '.components-list .swiper-button-next',
-             prevButton: '.components-list .swiper-button-prev',
-             slidesPerView: 5,
-             paginationClickable: true,
-		     loop: true,
-             simulateTouch: false,
-             autoplay: 2000,
-             speed: 700,
-             preventClicks: false,
-             preventClicksPropagation: false,
-             breakpoints: {
-                 // when window width is <= 1200px
-                 1200: {
-					 slidesPerView: 4,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                },
-                // when window width is <= 767px
-                 767: {
-					 slidesPerView: 3,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                },
-                // when window width is <= 550px
-                 440: {
-					 slidesPerView: 1,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                }
-             }
-         });
-         $(".components-list .swiper-container").hover(
-		  	function() {
-		  		swiper1.autoplayPaused = true;
-				swiper1.stopAutoplay();
-		  	},
-		  	function() {
-		  		swiper1.autoplayPaused = false;
-				swiper1.startAutoplay();
-		  	}
-		);
+	        var swiper1 = new Swiper('.components-list .swiper-container', {
+	            nextButton: '.components-list .swiper-button-next',
+	            prevButton: '.components-list .swiper-button-prev',
+	            slidesPerView: 5,
+	            paginationClickable: true,
+			    loop: true,
+	            simulateTouch: false,
+	            autoplay: 2000,
+	            speed: 700,
+	            preventClicks: false,
+	            preventClicksPropagation: false,
+	            controlInverse: true,
+	            breakpoints: {
+	                 // when window width is <= 1200px
+	                1200: {
+						slidesPerView: 4,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+			        },
+	                // when window width is <= 767px
+	                767: {
+						slidesPerView: 3,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+	                },
+	                // when window width is <= 550px
+	                440: {
+						slidesPerView: 1,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+	                }
+	             }
+	        });
+	        // for ms edge:
+	        $(".components-list .swiper-container").removeClass("swiper-wp8-horizontal");
+	        
+	        $(".components-list .swiper-container").hover(
+			  	function() {
+			  		swiper1.autoplayPaused = true;
+					swiper1.stopAutoplay();
+			  	},
+			  	function() {
+			  		swiper1.autoplayPaused = false;
+					swiper1.startAutoplay();
+			  	}
+			);
 
-         var swiper2 = new Swiper('.overview .swiper-container', {
-             pagination: '.overview .swiper-pagination',
-             slidesPerView: 1,
-             paginationClickable: true,
-             simulateTouch: false,
-             speed: 2000,
-         });
+	        var swiper2 = new Swiper('.overview .swiper-container', {
+	            pagination: '.overview .swiper-pagination',
+	            slidesPerView: 1,
+	            paginationClickable: true,
+	            simulateTouch: false,
+	            speed: 2000,
+	            autoplay: 5000,
+	            loop: true
+	        });
+	         $(".overview .swiper-container").hover(
+			  	function() {
+			  		swiper2.autoplayPaused = true;
+					swiper2.stopAutoplay();
+			  	},
+			  	function() {
+			  		swiper2.autoplayPaused = false;
+					swiper2.startAutoplay();
+			  	}
+			);
 
-          var swiper3 = new Swiper('.blog-list .swiper-container', {
-             pagination: '.blog-list .swiper-pagination',
-             //slidesPerView: 1,
-             paginationClickable: true,
-             simulateTouch: false,
-             speed: 700,
-             autoplay: 3000,
-             effect: 'fade',
-             fade: {
-			  crossFade: false
-			}
-         });
-         $(".blog-list .swiper-container").hover(
-		  	function() {
-		  		swiper3.autoplayPaused = true;
-				swiper3.stopAutoplay();
-		  	},
-		  	function() {
-		  		swiper3.autoplayPaused = false;
-				swiper3.startAutoplay();
-		  	}
-		);
+		    var swiper3 = new Swiper('.blog-list .swiper-container', {
+		        pagination: '.blog-list .swiper-pagination',
+		        //slidesPerView: 1,
+		        paginationClickable: true,
+		        simulateTouch: false,
+		        speed: 700,
+		        autoplay: 3000,
+		        effect: 'fade',
+		        fade: {
+				  crossFade: false
+				}
+	         });
+	        $(".blog-list .swiper-container").hover(
+			  	function() {
+			  		swiper3.autoplayPaused = true;
+					swiper3.stopAutoplay();
+			  	},
+			  	function() {
+			  		swiper3.autoplayPaused = false;
+					swiper3.startAutoplay();
+			  	}
+			);
         </script>
         
 	</body>

@@ -114,16 +114,24 @@ $( document ).ready(function() {
 	/**** Burger Menu End ****/
 
 	/**** Search on Page Start ****/
-	$(".search").click(function () {
-		$(this).closest("li").toggleClass("active");
-	});
-	$(".search-tip").click(function () {
-		$(this).addClass('down').prev().focus();
-	});
-	$(".search-form .form-input").focus(function () {
-		$(this).next().removeClass('down');
-	});
-	/**** Search on Page End ****/
+    $(".search").click(function () {
+        $(this).closest("li").toggleClass("active");
+        if(!($(this).closest("li").hasClass("active"))) {
+             $(".search-form .form-input").trigger("change");
+        }
+    });
+    $(".search-tip").click(function () {
+        $(this).addClass('down').prev().focus();
+    });
+    $(".search-form .form-input").change(function () {
+        //console.log($(this).val().length);
+        if ($(this).val().length == 0) {
+            $(this).next().removeClass('down');
+        } else {
+            $(this).next().addClass('down');
+        }
+    });
+    /**** Search on Page End ****/
 
 		
 
@@ -204,6 +212,16 @@ $( document ).ready(function() {
         }
     });
     /****Custom Select End ****/
+
+    /**** Buy License Modal Start ****/
+    $(document).on('hide.bs.modal', '#buyLicenseModal', function (e) {
+     	setTimeout(function () {
+     		$("#full-check, #support-check").prop("checked", true);
+        	$("#dev-check").prop("checked", false);
+        	$("#support-check").prop("disabled", false).parent().removeClass("disabled");
+     	})    
+    });
+
 	var totalPrice = 0; 
     $("#dev-check").on("click", function () {
     	if ($(this).is(':checked')) {
@@ -222,18 +240,23 @@ $( document ).ready(function() {
     
     var checkedOptions = $(".modal-body").find("input[name=optcheck][checked]");
     for (var i = 0; i < checkedOptions.length; i++) {
-    	totalPrice += parseInt(checkedOptions.eq(i).data("value"));
+    	totalPrice += parseFloat(checkedOptions.eq(i).data("value"));
+    	//console.log(totalPrice.toFixed(2));
     }
-    $(".total-price").html("$" + totalPrice);
+    $(".total-price").html("$" + totalPrice.toFixed(2));
     
     $("input[name=optcheck]").on("change", function () {
     	if($(this).is(":checked")) {
-    		totalPrice += parseInt($(this).data("value"));
-    	} else {
-    		totalPrice -= parseInt($(this).data("value"));
-    	}
+    		totalPrice += parseFloat($(this).data("value"));
+    		//console.log(totalPrice.toFixed(2));
 
-	    $(".total-price").html("$" + totalPrice);
+    	} else {
+    		totalPrice -= parseFloat($(this).data("value"));
+    		//console.log(totalPrice.toFixed(2));
+    	}
+    	//console.log(totalPrice.toFixed(2));
+	    $(".total-price").html("$" + totalPrice.toFixed(2));
 	})
+	/**** Buy License Modal End ****/
 });
 

@@ -131,12 +131,20 @@ $( document ).ready(function() {
     /**** Search on Page Start ****/
     $(".search").click(function () {
         $(this).closest("li").toggleClass("active");
+        if(!($(this).closest("li").hasClass("active"))) {
+             $(".search-form .form-input").trigger("change");
+        }
     });
     $(".search-tip").click(function () {
         $(this).addClass('down').prev().focus();
     });
-    $(".search-form .form-input").focus(function () {
-        $(this).next().removeClass('down');
+    $(".search-form .form-input").change(function () {
+        //console.log($(this).val().length);
+        if ($(this).val().length == 0) {
+            $(this).next().removeClass('down');
+        } else {
+            $(this).next().addClass('down');
+        }
     });
     /**** Search on Page End ****/
 
