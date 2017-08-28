@@ -985,54 +985,57 @@
 		</div>
 
 		<script>
-         var swiper1 = new Swiper('.components-list .swiper-container', {
-             nextButton: '.components-list .swiper-button-next',
-             prevButton: '.components-list .swiper-button-prev',
-             slidesPerView: 5,
-             paginationClickable: true,
-		     loop: true,
-             simulateTouch: false,
-             autoplay: 1000,
-             speed: 700,
-             preventClicks: false,
-             preventClicksPropagation: false,
-             breakpoints: {
-                 // when window width is <= 1200px
-                 1200: {
-					 slidesPerView: 4,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                },
-                // when window width is <= 767px
-                 767: {
-					 slidesPerView: 3,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                },
-                // when window width is <= 550px
-                 440: {
-					 slidesPerView: 1,
-					 loop: true,
-					 autoplay: 2000,
-					 speed: 700,
-					 paginationClickable: true,
-                }
-             }
-         });
-         $(".components-list .swiper-container").hover(
-		  	function() {
-		  		swiper1.autoplayPaused = true;
-				swiper1.stopAutoplay();
-		  	},
-		  	function() {
-		  		swiper1.autoplayPaused = false;
-				swiper1.startAutoplay();
-		  	}
-		);
+	        var swiper1 = new Swiper('.components-list .swiper-container', {
+	            nextButton: '.components-list .swiper-button-next',
+	            prevButton: '.components-list .swiper-button-prev',
+	            slidesPerView: 5,
+	            paginationClickable: true,
+			    loop: true,
+	            simulateTouch: false,
+	            autoplay: 1000,
+	            speed: 700,
+	            preventClicks: false,
+	            preventClicksPropagation: false,
+	            breakpoints: {
+	                // when window width is <= 1200px
+	                1200: {
+						slidesPerView: 4,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+	                },
+	                // when window width is <= 767px
+	                767: {
+						slidesPerView: 3,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+	                },
+	                // when window width is <= 550px
+	                440: {
+						slidesPerView: 1,
+						loop: true,
+						autoplay: 2000,
+						speed: 700,
+						paginationClickable: true,
+	                }
+	             }
+	         });
+	        // for ms edge:
+	        $(".components-list .swiper-container").removeClass("swiper-wp8-horizontal");
+
+	        $(".components-list .swiper-container").hover(
+			  	function() {
+			  		swiper1.autoplayPaused = true;
+					swiper1.stopAutoplay();
+			  	},
+			  	function() {
+			  		swiper1.autoplayPaused = false;
+					swiper1.startAutoplay();
+			  	}
+			);
         </script>
 
 	</body>
