@@ -258,5 +258,102 @@ $( document ).ready(function() {
 	    $(".total-price").html("$" + totalPrice.toFixed(2));
 	})
 	/**** Buy License Modal End ****/
+
+	var pagination = $(".pagination li");
+	var morePages = '<li class="more"><a>...</a></li>';
+	if (pagination.length > 6) {
+		$(".pagination li[data-page=3]").after(morePages);
+	}
+	$(".pagination .more").on("click", function () {
+		var pagePrevNum = parseInt($(this).prev().data("page"));
+		var pageNextNum = parseInt($(this).next().data("page"));
+		//console.log(pageNextNum);
+		if ($(this).next().hasClass("hidden")) {
+			for (var i = pagePrevNum; i >= (pagePrevNum - 2); i--) {
+				$(this).parent().children('[data-page=' + i + ']').addClass("hidden");
+			}
+			for (var i = (pagePrevNum+1); i <= (pagePrevNum + 2); i++) {
+				$(this).parent().children('[data-page=' + i + ']').removeClass("hidden");
+				$(this).next().trigger("click");
+			} 
+			//console.log("length " +(pagination.length-2));
+			if ((pagePrevNum+3) < (pagination.length-2)) {
+				$(".pagination li[data-page=" + (pagePrevNum+2) + "]").after($(this).clone(true));
+				if ($(this).parent().children(".more").length > 2) {
+					$(this).parent().children(".more").first().remove();
+				}
+			} else {
+				$(this).parent().children(".more").first().remove();
+			}
+			
+		} else if ($(this).prev().hasClass("hidden")) {
+			for (var i = (pageNextNum-1); i >= (pageNextNum - 2); i--) {
+				$(this).parent().children('[data-page=' + i + ']').removeClass("hidden");
+				$(this).prev().trigger("click");
+			}
+			for (var i = pageNextNum; i <= (pageNextNum + 2); i++) {
+				//console.log("length " +(pagination.length-2));
+				if (i < (pagination.length-2)) {
+					$(this).parent().children('[data-page=' + i + ']').addClass("hidden");
+				} 				
+			} 
+			if ((pageNextNum-3) > 1) {
+				$(".pagination li[data-page=" + (pageNextNum-2) + "]").before($(this).clone(true));
+				if ($(this).parent().children(".more").length > 2) {
+					$(this).parent().children(".more").last().remove();
+				}
+			}
+			else {
+				$(this).parent().children(".more").last().remove();
+				$(this).parent().children('[data-page=' + 1 + ']').removeClass("hidden");
+			}
+		}		
+	})
+
+	$(".pagination").on("click", function() {
+		var activePage = parseInt($(this).children(".active").data("page"));
+		if (activePage == 1) {
+			$(this).children(".prev").addClass("disabled");
+		} else if (activePage == (pagination.length-2)) {
+			$(this).children(".next").addClass("disabled");
+		} else {
+			$(this).children(".prev").removeClass("disabled");
+			$(this).children(".next").removeClass("disabled");
+		}
+	})
+
+	$(".pagination li").on("click", function () {
+		if (!($(this).hasClass("prev") || $(this).hasClass("next") || $(this).hasClass("more"))) {
+			$(this).parent().children().removeClass("active");
+			$(this).addClass("active");
+		}	
+	})
+
+	$(".pagination .next").on("click", function() {
+		var nextPage = $(this).parent().children(".active").next();
+		//nextPage.prev().removeClass("active");
+		if (!(nextPage.hasClass("more")) && (parseInt(nextPage.data("page")) <= (pagination.length-2))) {			
+			nextPage.prev().removeClass("active");
+			nextPage.addClass("active");
+		} else if (nextPage.hasClass("more")) {
+			nextPage.trigger("click");
+			nextPage.prev().removeClass("active");
+			nextPage.next().addClass("active");
+		} 
+	})
+
+	$(".pagination .prev").on("click", function() {
+		var prevPage = $(this).parent().children(".active").prev();
+		//nextPage.prev().removeClass("active");
+		if (!(prevPage.hasClass("more")) && (parseInt(prevPage.data("page")) >= 1)) {			
+			prevPage.next().removeClass("active");
+			prevPage.addClass("active");
+		} else if (prevPage.hasClass("more")) {
+			prevPage.trigger("click");
+			prevPage.next().removeClass("active");
+			prevPage.prev().addClass("active");
+		} 
+	})
+
 });
 

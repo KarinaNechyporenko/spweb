@@ -438,6 +438,14 @@
 	.home .overview .swiper-container {
 	    min-height: 530px;
 	}
+	.pagination>li>a, .pagination>li>span {
+		margin: 0;
+	}
+	.pagination .prev a,
+	.pagination .next a {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 @media (max-height: 505px) and (max-width: 767px) {
 	.header-nav ul.navbar-right {

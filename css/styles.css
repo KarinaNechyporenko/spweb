@@ -27,8 +27,9 @@ sup, sub {
     transition: .22s;
 }
 .pagination .icon {
-	background-size: 26px 24px;
+	background-size: 26px 22px;
     vertical-align: middle;
+    background-repeat: no-repeat;
 }
 .read-more .icon {
 	margin-right: 10px;
@@ -147,7 +148,7 @@ sup, sub {
     top: 50%;
     margin-top: -12px;
 }
-
+/**** PAGINATION Start ****/
 .page-nav {
 	width: 100%;
     text-align: center;
@@ -170,7 +171,7 @@ sup, sub {
     background-color: transparent;
     border-color: transparent;
 }
-
+/**** PAGINATION End ****/
 
 
 button {
