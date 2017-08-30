@@ -4,7 +4,10 @@ $( document ).ready(function() {
     var maxContentTop;
     var minContentTop;
 
-
+    if (sessionStorage.getItem('basketCount') > 0) {
+        $(".basket-count").removeClass("hidden").html(localStorage.getItem('basketCount'));
+    }
+    
 	/**** Header Resize without smooth scroll Start ****/
 
     $(window).scroll(function () {

@@ -1,3 +1,4 @@
+//localStorage.clear();
 $( document ).ready(function() {
 	/**** TablesFit Function ****/
 	function tablesFit () {
@@ -265,6 +266,21 @@ $( document ).ready(function() {
     	}
     	//console.log(totalPrice.toFixed(2));
 	    $(".total-price").html("$" + totalPrice.toFixed(2));
+	})
+    //console.log(sessionStorage.getItem('basketCount'));
+    if (sessionStorage.getItem('basketCount') > 0) {
+		$(".basket-count").removeClass("hidden").html(localStorage.getItem('basketCount'));
+	}		
+	//localStorage.getItem('basketCount');// ? 0 : localStorage.getItem('basketCount');
+	$(".btn-add").on("click", function () {
+		var basketCount = sessionStorage.getItem('basketCount');
+		basketCount++;
+		sessionStorage.setItem('basketCount', basketCount);
+		//console.log(basketCount);
+		if (basketCount > 0) {
+			$(".basket-count").removeClass("hidden").html(basketCount);
+			$("#buyLicenseModal").modal("hide");
+		}		
 	})
 	/**** Buy License Modal End ****/
 
