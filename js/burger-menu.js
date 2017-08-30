@@ -274,7 +274,7 @@ $( document ).ready(function() {
 	var morePagesHide = '<li class="more hidden"><a>...</a></li>';
 	if (pagination.length > 6) {
 		$(".pagination li[data-page=3]").after(morePages);
-		$(".pagination li[data-page=" + (pagination.length-5) +"]").after(morePagesHide);
+		//$(".pagination li[data-page=" + (pagination.length-5) +"]").after(morePagesHide);
 	}
 	$(".pagination .more").on("click", function () {
 		var pagePrevNum = parseInt($(this).prev().data("page"));
@@ -290,15 +290,16 @@ $( document ).ready(function() {
 			} 
 			//console.log("length " +(pagination.length-2));
 			if ((pagePrevNum+3) < (pagination.length-2)) {
+				//console.log(pagePrevNum);
 				$(".pagination li[data-page=" + (pagePrevNum+2) + "]").after($(this).clone(true));
 				if ($(this).parent().children(".more").length > 2) {
 					$(this).parent().children(".more").first().remove();
 				}
 			} else {
-				$(this).parent().children(".more").first().remove();
+				$(this).parent().children(".more").not($(this)).remove();
 			}
 			
-		} else if ($(this).prev().hasClass("hidden")) {
+		} else if ($(this).prev().hasClass("hidden") && !($(this).next().hasClass("hidden"))) {
 			for (var i = (pageNextNum-1); i >= (pageNextNum - 2); i--) {
 				$(this).parent().children('[data-page=' + i + ']').removeClass("hidden");
 				$(this).prev().trigger("click");
@@ -315,7 +316,7 @@ $( document ).ready(function() {
 					$(this).parent().children(".more").last().remove();
 				}
 			}
-			else {
+			else {				
 				$(this).parent().children(".more").last().remove();
 				$(this).parent().children('[data-page=' + 1 + ']').removeClass("hidden");
 			}
@@ -336,13 +337,18 @@ $( document ).ready(function() {
 
 	$(".pagination li").on("click", function () {
 		if (!($(this).hasClass("prev") || $(this).hasClass("next") || $(this).hasClass("more"))) {
-			//$(this).parent().children().removeClass("active");
-			//$(this).addClass("active");
-			if ((parseInt($(this).data("page")) == (pagination.length-2)) && ($(this).prev().hasClass("hidden")) ) {
-				console.log($(this).data("page"));
-				//$(this).parent().children(".more").first().trigger("click");
+
+			if ((parseInt($(this).data("page")) == (pagination.length-2))  ) { //&& ($(this).prev().hasClass("hidden"))
+
+				
+				$(this).parent().children("[data-page=" + (pagination.length-5) + "]").after($(this).parent().children(".more").first().clone(true));
 				$(this).parent().children("[data-page]").not($(this)).addClass("hidden");
-				$(this).parent().children(".more").last().removeClass("hidden").trigger("click");
+				$(this).parent().children(".more").last().trigger("click");
+				for (var i = parseInt($(this).parent().children(".more").next().data("page")); i < (pagination.length-2); i++) {
+					$(this).parent().children("[data-page=" + i + "]").removeClass("hidden");
+				}
+				
+
 			}
 			$(this).parent().children().removeClass("active");
 			$(this).addClass("active");
@@ -358,7 +364,7 @@ $( document ).ready(function() {
 		} else if (nextPage.hasClass("more")) {
 			nextPage.trigger("click");
 			nextPage.prev().removeClass("active");
-			nextPage.next().addClass("active");
+			nextPage.next().addClass("active");		
 		} 
 	})
 
@@ -369,10 +375,11 @@ $( document ).ready(function() {
 			prevPage.next().removeClass("active");
 			prevPage.addClass("active");
 		} else if (prevPage.hasClass("more")) {
+			//console.log("not hidden" + prevPage);
 			prevPage.trigger("click");
 			prevPage.next().removeClass("active");
 			prevPage.prev().addClass("active");
-		} 
+		}
 	})
 	/**** Pagination End ****/
 });
