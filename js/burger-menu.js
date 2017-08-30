@@ -216,10 +216,19 @@ $( document ).ready(function() {
     /**** Buy License Modal Start ****/
     $(document).on('hide.bs.modal', '#buyLicenseModal', function (e) {
      	setTimeout(function () {
-     		$("#full-check, #support-check").prop("checked", true);
-        	$("#dev-check").prop("checked", false);
-        	$("#support-check").prop("disabled", false).parent().removeClass("disabled");
-     	})    
+     		if (!($("#full-check").prop("checked"))) {
+     			//console.log("full-check" + $("#full-check").prop("checked"));
+     			$("#full-check").trigger("click");
+     		}
+     		if (!($("#support-check").prop("checked"))) {
+     			//console.log("support-check" + $("#support-check").prop("checked"));
+     			$("#support-check").trigger("click");
+     		}
+        	if ($("#dev-check").prop("checked")) {
+        		//console.log("dev-check" + $("#dev-check").prop("checked"));
+        		$("#dev-check").trigger("click");
+        	}
+     	}, 150);    
     });
 
 	var totalPrice = 0; 
@@ -259,6 +268,7 @@ $( document ).ready(function() {
 	})
 	/**** Buy License Modal End ****/
 
+	/**** Pagination Start ****/
 	var pagination = $(".pagination li");
 	var morePages = '<li class="more"><a>...</a></li>';
 	if (pagination.length > 6) {
@@ -354,6 +364,6 @@ $( document ).ready(function() {
 			prevPage.prev().addClass("active");
 		} 
 	})
-
+	/**** Pagination End ****/
 });
 

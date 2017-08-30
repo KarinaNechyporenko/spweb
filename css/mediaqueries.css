@@ -51,11 +51,15 @@
 	    width: 400px;
 	    margin: 130px auto;
 	}
-	.modal .btn-red {
-		margin-left: 12px;
+
+	.modal-footer > div:nth-child(1) {
+		margin: 0 15px 15px;
 	}
-	.modal .btn-black {
-		margin-right: 12px;
+	.modal-footer > div:nth-child(2) {
+		margin: 0 10px 15px;
+	}
+	.modal .btn-red {
+		margin-left: -5px;
 	}
 }
 @media (min-width: 767px) and (max-width: 1200px) {
@@ -463,12 +467,14 @@
 	}
 }
 @media (max-width: 430px) {
-	.modal .btn-red {
+	/*.modal .btn-red {*/
+	.modal-footer > div:nth-child(2) {
 		margin-bottom: 60px;
 	}
-	.modal .btn-black {
+	/*.modal .btn-black {*/
+	.modal-footer > div:nth-child(1) {
 		position: absolute;
-    	bottom: 10px;;
+    	bottom: 25px;;
 	}
 
 }
