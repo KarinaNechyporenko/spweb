@@ -271,8 +271,10 @@ $( document ).ready(function() {
 	/**** Pagination Start ****/
 	var pagination = $(".pagination li");
 	var morePages = '<li class="more"><a>...</a></li>';
+	var morePagesHide = '<li class="more hidden"><a>...</a></li>';
 	if (pagination.length > 6) {
 		$(".pagination li[data-page=3]").after(morePages);
+		$(".pagination li[data-page=" + (pagination.length-5) +"]").after(morePagesHide);
 	}
 	$(".pagination .more").on("click", function () {
 		var pagePrevNum = parseInt($(this).prev().data("page"));
@@ -334,6 +336,14 @@ $( document ).ready(function() {
 
 	$(".pagination li").on("click", function () {
 		if (!($(this).hasClass("prev") || $(this).hasClass("next") || $(this).hasClass("more"))) {
+			//$(this).parent().children().removeClass("active");
+			//$(this).addClass("active");
+			if ((parseInt($(this).data("page")) == (pagination.length-2)) && ($(this).prev().hasClass("hidden")) ) {
+				console.log($(this).data("page"));
+				//$(this).parent().children(".more").first().trigger("click");
+				$(this).parent().children("[data-page]").not($(this)).addClass("hidden");
+				$(this).parent().children(".more").last().removeClass("hidden").trigger("click");
+			}
 			$(this).parent().children().removeClass("active");
 			$(this).addClass("active");
 		}	
