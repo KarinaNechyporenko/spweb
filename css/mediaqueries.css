@@ -12,10 +12,6 @@
 	.overview div:nth-child(2) {
 	    padding-right: 15px;
 	}
-	/*.swiper-button-prev, .swiper-button-next {
-		display: block;
-		z-index: 3;
-	}*/
 	.products .overview .product-item {
 	    padding-left: 15px;
 	    padding-right: 80px;
@@ -82,6 +78,9 @@
 	    height: 22px;
 	    background-size: 100%;
 	    background-repeat: no-repeat;
+	}
+	.navbar-inverse .navbar-nav>li>a .basket-count {
+		right: 0;
 	}
 }
 @media (max-width: 992px) {
@@ -176,20 +175,6 @@
 	    float: none;
 	    width: 1%; 
 	}
-	/*.table-scroll {
-		width: 72.6%;
-	}*/
-	/*.table>thead>tr>th {
-		height: 38px;
-	}
-	.table-fixed-right .table>thead>tr>th {
-	    font-size: 11px;
-	}*/
-	/*.table>thead>tr>th {
-	    height: 49px;
-	    line-height: 28px;
-	}*/
-
 }
 @media (max-width: 767px) {
 	.collapsing {
@@ -210,7 +195,6 @@
 	}
 	.page-content {
 		position: relative;
-		/*top: 200px;*/
 		top: 260px;
 	}
 	.navbar-collapse {
@@ -232,7 +216,6 @@
 		margin-right: 10px;
 	}
 	nav.navbar.opened-menu {
-	    /*height: 100%;*/
 	    width: 100%;
 	}
 	.navbar-collapse {
@@ -243,7 +226,6 @@
 		position: fixed;
 		width: 100%;
 		height: 100%;
-		/*z-index: 4;*/
 	}
 	
 	.header-nav ul.navbar-right {
@@ -312,29 +294,9 @@
 	    max-width: 240px;
 	    margin: auto;
 	}
-	.table-fixed-right {
-		/*width: 25%;
-		min-width: 140px;*/ 
-		/*width: 140px;
-		overflow-x: hidden;*/
-	}
-	.table-fixed-right .table>thead>tr>th {
-	    /*font-size: 10px;*/
-	    /*line-height: 18px;*/
-    	/*height: 29px;*/
-	}
-	/*.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-		padding: 4px;
-	}*/
-	/*.table-scroll {
-	    width: calc(100% - 139px);
-	}*/
 	.notes ul {
 		padding-left: 20px;
 	}
-	/*.notes .feature-name {
-	    padding-left: 15px;
-	}*/
 	.icon {
 	    width: 22px;
 	    height: 22px;
@@ -346,10 +308,6 @@
 		margin-right: 0;
 	}
 
-	/*body.home footer {
-		top: 260px;
-    	height: 355px;
-	}*/
 	.home .blog-list .swiper-container {
 	    min-height: 410px;
 	}
@@ -365,6 +323,10 @@
 	}
 	.modal .price.total-price {
 		text-align: center;
+	}
+	.navbar-inverse .navbar-nav>li>a .basket-count {
+		right: auto;
+		left: 30px;
 	}
 }
 @media (max-width: 590px) {
