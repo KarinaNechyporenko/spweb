@@ -269,7 +269,7 @@ $( document ).ready(function() {
 	})
     //console.log(sessionStorage.getItem('basketCount'));
     if (sessionStorage.getItem('basketCount') > 0) {
-		$(".basket-count").removeClass("hidden").html(localStorage.getItem('basketCount'));
+		$(".basket-count").removeClass("hidden").html(sessionStorage.getItem('basketCount'));
 	}		
 	//localStorage.getItem('basketCount');// ? 0 : localStorage.getItem('basketCount');
 	$(".btn-add").on("click", function () {

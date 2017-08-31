@@ -5,7 +5,7 @@ $( document ).ready(function() {
     var minContentTop;
 
     if (sessionStorage.getItem('basketCount') > 0) {
-        $(".basket-count").removeClass("hidden").html(localStorage.getItem('basketCount'));
+        $(".basket-count").removeClass("hidden").html(sessionStorage.getItem('basketCount'));
     }
     
 	/**** Header Resize without smooth scroll Start ****/
